@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+#root {
+  min-height: 100vh;
+  background-color: black;
+}
+
+.mid-container {
+  background-image: linear-gradient(360deg, black 10%, rgb(79, 78, 78, 0));
+}
+
+.video {
+  min-width: 100%;
+  min-height: 100%;
+}
