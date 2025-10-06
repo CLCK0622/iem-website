@@ -7,7 +7,7 @@ function Layout() {
     <>
       <Navbar />
       <Outlet />
-      <footer className="flex justify-center items-end h-[500px] bg-black text-white p-10">
+      <footer className="flex justify-center items-end h-[300px] bg-black text-white p-10">
         <span>Copyright IEM @2025</span>
       </footer>
     </>

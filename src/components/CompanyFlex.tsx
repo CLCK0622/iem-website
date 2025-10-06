@@ -39,7 +39,7 @@ const CompanyFlex = () => {
   const gmIsVisible = useIsVisible(gmRef);
 
   const className =
-    "size-[150px] object-contain transition-opacity ease-in-out duration-1000";
+    "company-icon size-[150px] object-contain transition-opacity ease-in-out duration-1000";
 
   return (
     <div className="grid grid-cols-3 gap-5">

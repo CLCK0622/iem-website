@@ -13,8 +13,8 @@ const Navbar = () => {
       <div className="flex mx-auto xl:absolute left-170">
         <Navlink
           name="About"
-          dropdown={["Teams", "Leadership", "Mission"]}
-          links={["/teams", "/leaders", "/mission"]}
+          dropdown={["Teams", "Join", "Leadership"]}
+          links={["/teams", "/join", "/leaders"]}
         />
         <Navlink
           name="Sponsors"
@@ -23,8 +23,12 @@ const Navbar = () => {
         />
         <Navlink
           name="Contact"
-          dropdown={["Email", "GroupMe", "LinkedIn", "Instagram"]}
-          links={["/teams"]}
+          dropdown={["Email", "LinkedIn", "Instagram"]}
+          links={[
+            "/join",
+            "https://www.linkedin.com/company/illini-electric-motorsports/",
+            "https://www.instagram.com/illinoisfsae/",
+          ]}
         />
       </div>
       <span className="text-2xl text-white ">Profile</span>

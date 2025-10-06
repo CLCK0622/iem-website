@@ -15,10 +15,10 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
     setOpen(!open);
   };
   return (
-    <div className="cursor-pointer rounded-lg border-[0.5px] border-slate-300 my-1 w-full text-white">
+    <div className="cursor-pointer rounded-lg border-[0.25px] border-slate-300/50 my-1 w-full text-white">
       <button
         onClick={handleClick}
-        className="rounded-lg items-center cursor-pointer w-full px-3 py-2 flex flex-row text-start z-10 transition duration-300 hover:text-neutral-400"
+        className="rounded-lg items-center cursor-pointer w-full px-3 py-2 flex flex-row text-start z-10 transition-color duration-300 hover:text-neutral-300"
       >
         <span>
           <MdKeyboardArrowRight
@@ -29,17 +29,17 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
             }
           />
         </span>
-        <span className="text-lg font-bold">{label}</span>
+        <span className="font-semibold">{label}</span>
       </button>
-      {open ? <div className="h-[0.5px] w-full bg-slate-300"></div> : null}
+      {open && <div className="h-[0.25px] w-full bg-slate-300/50"></div>}
       <div
         className={
           open
-            ? "cursor-text font-light text-left px-3 py-2 ease-in-out scale-y-100 origin-top"
-            : "scale-y-0 h-0 origin-top"
+            ? "cursor-text transition-transform duration-200 font-light text-left px-3 py-2 ease-in-out scale-y-100 origin-top"
+            : "scale-y-0 h-0 transition-transform duration-200 origin-top"
         }
       >
-        <span className={open ? "opacity-100" : "opacity-0"}>
+        <span className={open ? "opacity-100 text-sm" : "opacity-0"}>
           {open ? (body ? body : "No description yet") : ""}
         </span>
       </div>

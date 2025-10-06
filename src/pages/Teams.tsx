@@ -20,15 +20,15 @@ const Teams = () => {
   return (
     <div className="flex flex-col justify-center text-center mt-15">
       <div className="flex flex-col justify-center mb-10">
-        <span className="text-white font-bold text-8xl mb-5">Our Teams</span>
-        <span className="text-white text-xl w-1/2 mx-auto">
-          Illini Electric Motorsports has three main teams. Each category is
-          further broken down into individual subteams, and these subteams
-          usually have multiple projects! No prior experience is required.
-          Exchange students, undergraduate, and graduate students are welcome.
+        <span className="text-white font-semibold text-7xl">Our Teams</span>
+        <span className="text-white font-light text-lg w-full xl:w-1/2 mx-auto">
+          Illini Electric Motorsports has three main teams. Each team is further
+          broken down into more subteams, and these subteams usually have
+          multiple projects. No prior experience is required. Exchange students,
+          undergraduate, and graduate students are welcome.
         </span>
       </div>
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-col w-full xl:flex-row xl:justify-center">
         <TeamCard
           title="Electrical"
           icon={BiSolidZap}
@@ -44,7 +44,7 @@ const Teams = () => {
         <TeamCard
           title="Mechanical"
           icon={GiGears}
-          iconColor="#5f5f61"
+          iconColor="#737373ff"
           subteamNames={MechNames}
         >
           Our mechanical subteams design, validate, and manufacture the physical
@@ -65,7 +65,7 @@ const Teams = () => {
         </TeamCard>
       </div>
       <div className="flex flex-col items-center mt-20">
-        <span className="text-4xl text-white font-bold ">
+        <span className="text-4xl text-white font-semibold ">
           Interested? Find out how to join us here!
         </span>
         <ButtonLink path="/join">Join Us</ButtonLink>

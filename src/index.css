@@ -13,3 +13,48 @@
   min-width: 100%;
   min-height: 100%;
 }
+
+/* .company-icon {
+  transition-property: scale;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
+}
+
+.company-icon:hover {
+  scale: 1.05;
+} */
+
+.banner-wrapper {
+  height: 10rem;
+  overflow: hidden;
+}
+
+.banner-wrapper .wrapper {
+  display: flex;
+}
+
+.banner-wrapper .wrapper .icons {
+  display: flex;
+  animation: swipeRight 17000ms linear infinite;
+}
+
+@keyframes swipeRight {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swipeLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
