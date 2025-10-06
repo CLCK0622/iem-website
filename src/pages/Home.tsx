@@ -5,7 +5,6 @@ import ButtonLink from "../components/ButtonLink.tsx";
 import video from "../assets/IEM-video-final.mp4";
 import team_pic from "../assets/iem-team-pic.png";
 import team_pic_2 from "../assets/iem-team-2.jpg";
-// import logo from "../assets/iem-logo.svg";
 import CompanyBanner from "../components/CompanyBanner.tsx";
 import CountUp from "../components/Counter.tsx";
 import { companyIcons, sponsorIcons } from "../util/companyIcons.ts";
