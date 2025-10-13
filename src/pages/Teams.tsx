@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import TeamCard from "../components/TeamCard";
 
 import { BiSolidZap } from "react-icons/bi";
@@ -15,11 +15,19 @@ import {
   MechBodies,
   LogBodies,
 } from "../util/teamData";
+import { useIsVisible } from "../util/visibilityDetector";
 
 const Teams = () => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const textIsVisible = useIsVisible(textRef, 0.3);
   return (
     <div className="flex flex-col justify-center text-center mt-15">
-      <div className="flex flex-col justify-center mb-10">
+      <div
+        ref={textRef}
+        className={`${
+          textIsVisible ? "opacity-100" : "opacity-0"
+        } transition-all duration-1000 flex flex-col justify-center mb-5`}
+      >
         <span className="text-white font-semibold text-7xl">Our Teams</span>
         <span className="text-white font-light text-lg w-full xl:w-1/2 mx-auto">
           Illini Electric Motorsports has three main teams. Each team is further

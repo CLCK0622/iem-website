@@ -52,14 +52,15 @@ const CountUp = ({ end, duration = 2000, label }: CountUpProps) => {
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={countRef} className="text-center my-5">
+    <div ref={countRef} className="my-5">
       <span
         className={`${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-        } transition-all duration-1000 text-6xl font-bold text-white text-shadow-lg text-shadow-gray-400/50 mb-2`}
+        } transition-all duration-1000 text-6xl font-semibold text-white mb-2 flex flex-col`}
       >
-        {count.toLocaleString()}
-        {count == end ? "+" : ""} {label}
+        {count}
+        {count == end ? "+" : ""}
+        <span className="text-3xl font-light">{label}</span>
       </span>
     </div>
   );

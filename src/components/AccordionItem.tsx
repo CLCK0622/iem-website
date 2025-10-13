@@ -29,7 +29,7 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
             }
           />
         </span>
-        <span className="font-semibold">{label}</span>
+        <span className="font-light">{label}</span>
       </button>
       {open && <div className="h-[0.25px] w-full bg-slate-300/50"></div>}
       <div

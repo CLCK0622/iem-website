@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import mattermost from "../assets/company-logos/mattermost.svg";
 import confluence from "../assets/company-logos/confluence.svg";
@@ -6,11 +6,24 @@ import gitlab from "../assets/company-logos/gitlab.svg";
 
 import { FaCalendar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
+import { useIsVisible } from "../util/visibilityDetector";
 
 const Join = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
+  const accessRef = useRef<HTMLDivElement>(null);
+  const accessVisible = useIsVisible(accessRef, 0.3);
+
+  const generalRef = useRef<HTMLDivElement>(null);
+  const generalVisible = useIsVisible(generalRef, 0.3);
+
+  const infoRef = useRef<HTMLDivElement>(null);
+  const infoVisible = useIsVisible(infoRef, 0.3);
+
+  const mailingRef = useRef<HTMLDivElement>(null);
+  const mailingVisible = useIsVisible(mailingRef, 0.3);
 
   return (
     <div className="flex flex-col items-center mt-20 min-h-screen">
@@ -23,7 +36,14 @@ const Join = () => {
 
       <div className="flex flex-col w-2/3 mx-4">
         <div className="flex flex-col lg:flex-row mb-3">
-          <div className="flex flex-col text-white p-5 rounded-xl h-inherit border-[0.25px] border-slate-300/50 bg-zinc-900">
+          <div
+            ref={accessRef}
+            className={`${
+              accessVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-30"
+            } flex flex-col text-white p-5 rounded-xl h-inherit border-[0.25px] border-slate-300/50 transition-all duration-1000 bg-zinc-900`}
+          >
             <span className="text-white text-3xl font-semibold">
               After paying the $35 entrance fee, you get access to:
             </span>
@@ -58,7 +78,14 @@ const Join = () => {
             </div>
           </div>
           <div className="flex flex-col lg:w-2/3 my-2 lg:my-0 lg:ml-3">
-            <div className="flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 mb-3 bg-zinc-900">
+            <div
+              ref={generalRef}
+              className={`${
+                generalVisible
+                  ? "opacity-100 translate-y-0 translate-x-0"
+                  : "opacity-0 -translate-y-30 translate-x-30"
+              } flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-100 mb-3 bg-zinc-900`}
+            >
               <span className="text-white text-3xl font-semibold">
                 General Meetings
               </span>
@@ -75,7 +102,14 @@ const Join = () => {
                 IEM as a whole, and discover more about our teams and subteams.
               </span>
             </div>
-            <div className="flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 bg-zinc-900">
+            <div
+              ref={infoRef}
+              className={`${
+                infoVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-30"
+              } flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-200 bg-zinc-900`}
+            >
               <span className="text-white text-3xl font-semibold mb-2">
                 Info Sessions
               </span>
@@ -88,7 +122,14 @@ const Join = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row p-5 h-full rounded-xl border-[0.25px] border-slate-300/50 bg-zinc-900">
+        <div
+          ref={mailingRef}
+          className={`${
+            mailingVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-30"
+          } flex flex-col md:flex-row p-5 h-full rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-300 bg-zinc-900`}
+        >
           <div className="flex flex-col md:w-1/2 mr-5">
             <span className="text-white text-3xl font-semibold mb-2">
               Mailing List

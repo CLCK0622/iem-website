@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Teams from "./pages/Teams";
 import Layout from "./Layout";
 import Join from "./pages/Join";
+import Cars from "./pages/Cars";
+import AboutUs from "./pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,11 @@ const router = createBrowserRouter([
       },
       {
         index: true,
+        path: "about",
+        element: <AboutUs />,
+      },
+      {
+        index: true,
         path: "teams",
         element: <Teams />,
       },
@@ -25,6 +32,11 @@ const router = createBrowserRouter([
         index: true,
         path: "join",
         element: <Join />,
+      },
+      {
+        index: true,
+        path: "cars",
+        element: <Cars />,
       },
     ],
   },
