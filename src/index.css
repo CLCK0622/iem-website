@@ -27,18 +27,13 @@
   background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), black);
 }
 
-/* .company-icon {
-  transition-property: scale;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0ms;
+.logo-bg {
+  background-image: url("./assets/iem-logo.svg");
+  background-repeat: no-repeat;
 }
 
-.company-icon:hover {
-  scale: 1.05;
-} */
 .banner {
-  transition: opacity 1s ease-in-out, translate 2s;
+  transition: opacity 500ms ease-in-out, translate 2s;
 }
 
 .banner-wrapper {
@@ -73,8 +68,4 @@
   100% {
     transform: translateX(-100%);
   }
-}
-
-.landing-card {
-  opacity: 1;
 }

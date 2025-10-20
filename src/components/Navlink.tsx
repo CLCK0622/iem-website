@@ -39,7 +39,7 @@ const Navlink = ({
           {dropdown.map((link, index) => (
             <React.Fragment key={index}>
               <a
-                className="flex text-lg px-3 py-2 my-1 mx-2 rounded-lg justify-between hover:bg-neutral-800 transition duration-300 ease-in-out items-center"
+                className="flex text-lg px-3 py-2 my-1 mx-1 rounded-lg justify-between hover:bg-neutral-800 transition duration-300 ease-in-out items-center"
                 href={index < links.length ? links[index] : ""}
                 onClick={(e) =>
                   handleClick(e, links.length ? links[index] : "")

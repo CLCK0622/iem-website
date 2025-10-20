@@ -26,17 +26,11 @@ const Teams = () => {
         ref={textRef}
         className={`${
           textIsVisible ? "opacity-100" : "opacity-0"
-        } transition-all duration-1000 flex flex-col justify-center mb-5`}
+        } flex flex-col justify-center mb-5 mx-10`}
       >
-        <span className="text-white font-semibold text-7xl">Our Teams</span>
-        <span className="text-white font-light text-lg w-full xl:w-1/2 mx-auto">
-          Illini Electric Motorsports has three main teams. Each team is further
-          broken down into more subteams, and these subteams usually have
-          multiple projects. No prior experience is required. Exchange students,
-          undergraduate, and graduate students are welcome.
-        </span>
+        <span className="text-white font-[400] text-6xl mb-3">Our Teams</span>
       </div>
-      <div className="flex flex-col w-full xl:flex-row xl:justify-center">
+      <div className="flex flex-col w-full lg:flex-row lg:justify-center">
         <TeamCard
           title="Electrical"
           icon={BiSolidZap}
@@ -72,8 +66,8 @@ const Teams = () => {
           team with internationally sized challenges.
         </TeamCard>
       </div>
-      <div className="flex flex-col items-center mt-20">
-        <span className="text-4xl text-white font-semibold ">
+      <div className="flex flex-col items-center mt-10">
+        <span className="text-2xl text-white">
           Interested? Find out how to join us here!
         </span>
         <ButtonLink path="/join">Join Us</ButtonLink>

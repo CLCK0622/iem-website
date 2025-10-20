@@ -39,7 +39,7 @@ const CountUp = ({ end, duration = 2000, label }: CountUpProps) => {
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
 
-      const easeOutQuad = 1 - Math.pow(1 - percentage, 2);
+      const easeOutQuad = 1 - Math.pow(1 - percentage, 3);
       setCount(Math.floor(easeOutQuad * end));
 
       if (percentage < 1) {

@@ -7,6 +7,11 @@ import gitlab from "../assets/company-logos/gitlab.svg";
 import { FaCalendar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { useIsVisible } from "../util/visibilityDetector";
+import ButtonLink from "@/components/ButtonLink";
+import linkedin from "../assets/company-logos/linkedin-logo.svg";
+import instagram from "../assets/company-logos/insta-logo.svg";
+import youtube from "../assets/company-logos/youtube-logo.svg";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Join = () => {
   const onSubmit = (e: React.FormEvent) => {
@@ -42,7 +47,7 @@ const Join = () => {
               accessVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 -translate-x-30"
-            } flex flex-col text-white p-5 rounded-xl h-inherit border-[0.25px] border-slate-300/50 transition-all duration-1000 bg-zinc-900`}
+            } flex flex-col text-white p-5 rounded-xl h-inherit border-[0.25px] border-gray-200/50 transition-all duration-1000`}
           >
             <span className="text-white text-3xl font-semibold">
               After paying the $35 entrance fee, you get access to:
@@ -84,7 +89,7 @@ const Join = () => {
                 generalVisible
                   ? "opacity-100 translate-y-0 translate-x-0"
                   : "opacity-0 -translate-y-30 translate-x-30"
-              } flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-100 mb-3 bg-zinc-900`}
+              } flex flex-col p-5 rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-100 mb-3`}
             >
               <span className="text-white text-3xl font-semibold">
                 General Meetings
@@ -108,7 +113,7 @@ const Join = () => {
                 infoVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-30"
-              } flex flex-col p-5 rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-200 bg-zinc-900`}
+              } flex flex-col p-5 rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-200`}
             >
               <span className="text-white text-3xl font-semibold mb-2">
                 Info Sessions
@@ -128,37 +133,55 @@ const Join = () => {
             mailingVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-30"
-          } flex flex-col md:flex-row p-5 h-full rounded-xl border-[0.25px] border-slate-300/50 transition-all duration-1000 delay-300 bg-zinc-900`}
+          } flex flex-col md:flex-row p-5 h-full rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-300`}
         >
           <div className="flex flex-col md:w-1/2 mr-5">
             <span className="text-white text-3xl font-semibold mb-2">
               Mailing List
             </span>
             <span className="text-white font-light mb-2 pr-15">
-              Finally, our mailing list is the best way to hear from us before
+              Finally, our mailing list is the way to hear from us before
               getting access to Mattermost (our primary means of communication).
-              Sign up for it here!
             </span>
-          </div>
-          <form
-            onSubmit={onSubmit}
-            className="flex flex-col items-start md:w-1/2"
-          >
-            <label className="text-white" htmlFor="email">
-              Email
-            </label>
-            <input
-              name="email"
-              className="bg-[#E0E0E0] p-2 rounded-md mr-2 mb-2 w-full"
-              type="text"
-            />
-            <button
-              type="submit"
-              className="text-white text-md mr-3 border border-gray-400 hover:border-white cursor-pointer rounded-md w-full px-3 py-3 transition-all duration-300 hover:shadow-lg shadow-white/10"
+            <a
+              className="group relative items-center flex flex-row text-white h-fit mr-3 bg-black/50 border-[0.25px] border-gray-200/50 hover:border-white/60 hover:pr-8 cursor-pointer rounded-xl w-fit px-4 py-3 transition-all duration-300 hover:shadow-lg shadow-white/20"
+              target="_blank"
+              href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
             >
-              <span>Sign up</span>
-            </button>
-          </form>
+              <span className="text-lg font-light">
+                Join our mailing list here!
+              </span>
+              <FiArrowUpRight className="absolute opacity-0 right-2 transition-all duration-300 translate-y-3 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0" />
+            </a>
+          </div>
+          <div>
+            <span className="text-white text-3xl font-semibold mb-2">
+              Social Media
+            </span>
+            <div className="flex flex-row mt-2">
+              <a
+                className="mr-5"
+                href="https://linkedin.com/company/illini-electric-motorsports"
+                target="_blank"
+              >
+                <img className="size-[50px]" src={linkedin} alt="" />
+              </a>
+              <a
+                className="mr-5"
+                href="https://www.instagram.com/illinoisfsae"
+                target="_blank"
+              >
+                <img className="size-[50px]" src={instagram} alt="" />
+              </a>
+              <a
+                className="mr-5 bg-white rounded-lg px-1"
+                href="https://www.youtube.com/@illinoisfsae"
+                target="_blank"
+              >
+                <img className="size-[50px]" src={youtube} alt="" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

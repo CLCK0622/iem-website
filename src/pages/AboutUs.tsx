@@ -14,8 +14,8 @@ import { FaToolbox } from "react-icons/fa";
 import { RiUserCommunityLine } from "react-icons/ri";
 
 function AboutUs() {
-  // const historyRef = useRef<HTMLDivElement>(null);
-  // // const historyIsVisible = useIsVisible(historyRef);
+  const historyRef = useRef<HTMLDivElement>(null);
+  const historyIsVisible = useIsVisible(historyRef, 0.3);
 
   const doRef = useRef<HTMLDivElement>(null);
   const doIsVisible = useIsVisible(doRef, 0.3);
@@ -33,21 +33,28 @@ function AboutUs() {
     <>
       <div className="container min-w-screen">
         <div className="min-h-screen">
-          {/* <video className="video relative" autoPlay loop muted>
-            <source src={video} type="video/mp4" />
-          </video>
-
-          <div className="mid-container top-65 md:top-100 lg:top-140 xl:top-150 pb-30 xl:pb-50 h-fit w-full absolute">
-            <div className="flex flex-col text-6xl lg:text-8xl text-white text-shadow-sm text-shadow-black/50 font-semibold mx-10">
-              <span className="">Engineering</span>
-              <span>Excellence.</span>
-              <div className="flex flex-row">
-                <ButtonLink path="/teams">Our Teams</ButtonLink>
-                <ButtonLink path="/join">Join Us</ButtonLink>
-              </div>
+          <div
+            ref={historyRef}
+            className={`transition-all ease-in-out duration-1000 flex justify-center my-8 ${
+              historyIsVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+          >
+            <div className="logo-bg flex flex-col">
+              <span className="text-6xl text-white">Our History</span>
+              <span className="text-white text-lg font-light">
+                Since 1979, we have been racing Illini, fostering various teams
+                specializing in combustion, hybrid, and fully electric vehicles.
+                Today, we are embarking on a new milestone in our history by
+                merging Illini Motorsports with Illini Formula Electric,
+                becoming a singular formula electric team. With a rich legacy
+                and forty-four years of experience across different vehicle
+                technologies, Illini Electric Motorsports, will continue the
+                tradition of success and innovation.
+              </span>
             </div>
-          </div> */}
-
+          </div>
           <div
             ref={doRef}
             className={`transition-all ease-in-out duration-1000 flex justify-center my-8 ${
@@ -79,136 +86,6 @@ function AboutUs() {
                 src={team_pic_2}
                 alt=""
               />
-            </div>
-          </div>
-
-          <div
-            ref={offerRef}
-            className={`transition-all ease-in-out duration-1000 flex justify-center my-8 ${
-              offerIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
-            }`}
-          >
-            <div className="flex flex-col p-10 rounded-lg w-full items-center justify-center my-10">
-              <span className="text-6xl font-semibold text-white mb-8">
-                What we Offer
-              </span>
-              <div className="flex flex-col mx-15 w-full xl:w-2/3">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex flex-col text-white p-6 mr-4 rounded-xl h-inherit border-[0.25px] border-slate-300/50 bg-zinc-900">
-                    <div className="flex flex-col my-2 h-full justify-around">
-                      <div className="flex flex-row items-center">
-                        <FaUserTie className="size-[30px]" />
-                        <div className="flex flex-col ml-5">
-                          <span className="text-white text-xl ">
-                            Networking Events
-                          </span>
-                          <span className="text-white font-light">
-                            with companies like Rivian, John Deere, and more
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex flex-row content-center items-center">
-                        <FaToolbox className="size-[30px]" />
-                        <div className="flex flex-col ml-5">
-                          <span className="text-white text-xl ">
-                            Hands-On Experience
-                          </span>
-                          <span className="text-white font-light">
-                            design, prototype, and build with industry-standard
-                            tools
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex flex-row items-center">
-                        <RiUserCommunityLine className="size-[30px]" />
-                        <div className="flex flex-col ml-5">
-                          <span className="text-white text-xl ">
-                            Amazing Community
-                          </span>
-                          <span className="text-white font-light">
-                            interact with our diverse and talented community
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <span className="text-lg font-light text-white mt-5 w-full lg:w-1/2 lg:ml-4 lg:mt-0">
-                    The team at Illini Electric Motorsports applies knowledge
-                    learned in the classroom and develops new skills. By
-                    designing, manufacturing, and testing our vehicle, members
-                    get unique real world experience and incredible exposure to
-                    knowledge, technology, and industry professionals. Our
-                    alumni network is over 1000 strong and spans a wide array of
-                    industries, with past members now working at companies like
-                    Tesla, NVIDIA, PwC, SpaceX, Raytheon, and more.
-                  </span>
-                </div>
-              </div>
-              <div
-                ref={bannerRef}
-                className={`w-full xl:w-2/3 mt-10 transition-all duration-1500 ${
-                  bannerIsVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 -translate-x-20"
-                }`}
-              >
-                <span className="text-white text-2xl mb-5 font-light">
-                  Member outcomes:
-                </span>
-                <CompanyBanner icons={companyIcons} goesLeft={false} />
-                <span className="text-white text-2xl mb-5 font-light">
-                  Our sponsors:
-                </span>
-                <CompanyBanner icons={sponsorIcons} goesLeft={true} />
-              </div>
-            </div>
-          </div>
-
-          <div
-            ref={joinRef}
-            className={`flex flex-col items-center transition-all ease-in-out duration-1000 flex justify-center my-8 ${
-              joinIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
-            }`}
-          >
-            <div className="flex flex-col xl:flex-row p-10 rounded-lg w-full items-center justify-center mt-10">
-              <img
-                className="size-[550px] object-cover rounded-xl transition duration-300 hover:scale-105"
-                src={team_pic}
-                alt=""
-              />
-              <div className="flex flex-col mx-15 w-[550px] xl:w-sm">
-                <span className="text-6xl font-semibold text-white mb-3 mt-5">
-                  Who can Join?
-                </span>
-                <span className="text-lg font-light text-white">
-                  We aspire to bring together people of different scientific,
-                  engineering, artistic, and business backgrounds and unite them
-                  behind a common goal. The team at IEM comprises over 20
-                  different majors with students from over 4 different
-                  continents. Prospective members can join as soon as their
-                  first undergraduate year or as late as their final
-                  postgraduate year. We recruit from a wide array of disciplines
-                  ranging from business and accounting, to applied and
-                  theoretical sciences. No experience required!
-                </span>
-                <div className="flex flex-row relative">
-                  <ButtonLink path="/teams">Explore our teams</ButtonLink>
-                  <ButtonLink path="/join">Join us</ButtonLink>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col w-3/5">
-              <span className="text-xl text-gray-300 font-semibold mb-5">
-                Our members come from:
-              </span>
-              <div className="flex flex-col lg:flex-row justify-between">
-                <CountUp end={20} label="Majors" />
-                <CountUp end={4} label="Continents" />
-              </div>
             </div>
           </div>
         </div>
