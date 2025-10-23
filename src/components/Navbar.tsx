@@ -13,8 +13,8 @@ const Navbar = () => {
       <div className="flex mr-8">
         <Navlink
           name="About"
-          dropdown={["About Us", "Teams", "Join", "Leadership"]}
-          links={["/about", "/teams", "/join", "/leaders"]}
+          dropdown={["About Us", "Teams", "Join"]}
+          links={["/about", "/teams", "/join"]}
         />
         <Navlink
           name="Sponsors"

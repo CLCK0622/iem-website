@@ -7,17 +7,12 @@ import gitlab from "../assets/company-logos/gitlab.svg";
 import { FaCalendar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { useIsVisible } from "../util/visibilityDetector";
-import ButtonLink from "@/components/ButtonLink";
 import linkedin from "../assets/company-logos/linkedin-logo.svg";
 import instagram from "../assets/company-logos/insta-logo.svg";
 import youtube from "../assets/company-logos/youtube-logo.svg";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const Join = () => {
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
-
   const accessRef = useRef<HTMLDivElement>(null);
   const accessVisible = useIsVisible(accessRef, 0.3);
 
@@ -45,8 +40,8 @@ const Join = () => {
             ref={accessRef}
             className={`${
               accessVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-30"
+                ? "opacity-100 blur-none translate-x-0"
+                : "opacity-0 blur-lg -translate-x-30"
             } flex flex-col text-white p-5 rounded-xl h-inherit border-[0.25px] border-gray-200/50 transition-all duration-1000`}
           >
             <span className="text-white text-3xl font-semibold">
@@ -87,8 +82,8 @@ const Join = () => {
               ref={generalRef}
               className={`${
                 generalVisible
-                  ? "opacity-100 translate-y-0 translate-x-0"
-                  : "opacity-0 -translate-y-30 translate-x-30"
+                  ? "opacity-100 blur-none translate-y-0 translate-x-0"
+                  : "opacity-0 blur-lg -translate-y-30 translate-x-30"
               } flex flex-col p-5 rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-100 mb-3`}
             >
               <span className="text-white text-3xl font-semibold">
@@ -111,8 +106,8 @@ const Join = () => {
               ref={infoRef}
               className={`${
                 infoVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-30"
+                  ? "opacity-100 blur-non translate-x-0"
+                  : "opacity-0 blur-lg translate-x-30"
               } flex flex-col p-5 rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-200`}
             >
               <span className="text-white text-3xl font-semibold mb-2">
@@ -131,8 +126,8 @@ const Join = () => {
           ref={mailingRef}
           className={`${
             mailingVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-30"
+              ? "opacity-100 blur-none translate-y-0"
+              : "opacity-0 blur-lg translate-y-30"
           } flex flex-col md:flex-row p-5 h-full rounded-xl border-[0.25px] border-gray-200/50 transition-all duration-1000 delay-300`}
         >
           <div className="flex flex-col md:w-1/2 mr-5">

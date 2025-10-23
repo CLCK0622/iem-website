@@ -56,7 +56,7 @@ const CountUp = ({ end, duration = 2000, label }: CountUpProps) => {
       <span
         className={`${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-        } transition-all duration-1000 text-6xl font-semibold text-white mb-2 flex flex-col`}
+        } transition-all duration-1000 text-5xl font-semibold text-white mb-2 flex flex-col`}
       >
         {count}
         {count == end ? "+" : ""}

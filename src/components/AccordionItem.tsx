@@ -40,7 +40,9 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
         }
       >
         <span
-          className={open ? "opacity-100 text-gray-200 text-sm" : "opacity-0"}
+          className={
+            open ? "opacity-100 text-neutral-400 text-sm" : "opacity-0"
+          }
         >
           {open ? (body ? body : "No description yet") : ""}
         </span>

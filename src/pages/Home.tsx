@@ -27,18 +27,26 @@ import {
 function Home() {
   // const historyRef = useRef<HTMLDivElement>(null);
   // // const historyIsVisible = useIsVisible(historyRef);
+  const EngineeringRef = useRef<HTMLSpanElement>(null);
+  const EngineeringVisible = useIsVisible(EngineeringRef, 0.2);
+
+  const WelcomeSpanRef = useRef<HTMLSpanElement>(null);
+  const WelcomeSpanVisible = useIsVisible(WelcomeSpanRef, 0.2);
+
+  const ExcellenceRef = useRef<HTMLSpanElement>(null);
+  const ExcellenceVisible = useIsVisible(ExcellenceRef, 0.2);
 
   const welcomeRef = useRef<HTMLDivElement>(null);
-  const welcomeVisible = useIsVisible(welcomeRef, 0.3);
+  const welcomeVisible = useIsVisible(welcomeRef, 0.2);
 
   const bannerRef = useRef<HTMLDivElement>(null);
-  const bannerIsVisible = useIsVisible(bannerRef, 0.3);
+  const bannerIsVisible = useIsVisible(bannerRef, 0.2);
 
   const offerRef = useRef<HTMLDivElement>(null);
-  const offerIsVisible = useIsVisible(offerRef, 0.3);
+  const offerIsVisible = useIsVisible(offerRef, 0.2);
 
   const statsRef = useRef<HTMLDivElement>(null);
-  const statsIsVisible = useIsVisible(statsRef, 0.3);
+  const statsIsVisible = useIsVisible(statsRef, 0.2);
 
   const majors = [
     "Aerospace Engineering",
@@ -73,15 +81,44 @@ function Home() {
     <>
       <div className="container min-w-screen p-0">
         <div className="min-h-screen">
-          <video className="video relative h-[98vh]" autoPlay loop muted>
+          <video
+            className="video relative w-[100vw] h-[101vh]"
+            autoPlay
+            loop
+            muted
+          >
             <source src={video} type="video/mp4" />
           </video>
 
-          <div className="mid-container -bottom-25 pb-35 h-fit w-full absolute">
-            <div className="flex flex-col text-9xl md:text-9xl text-white/90 font-[550] mx-20">
-              <span className="">Engineering</span>
-              <span>Excellence.</span>
-              <div className="flex flex-row">
+          <div className="mid-container -bottom-30 pb-42 h-fit w-full absolute">
+            <div className="flex flex-col items-center text-9xl md:text-9xl text-white/90 font-[500] mx-20">
+              <span
+                ref={EngineeringRef}
+                className={`${
+                  EngineeringVisible
+                    ? "-translate-x-0 opacity-100 blur-none"
+                    : "-translate-x-30 opacity-0 blur-lg"
+                } transition-all duration-1500`}
+              >
+                Engineering
+              </span>
+              <span
+                ref={ExcellenceRef}
+                className={`${
+                  ExcellenceVisible
+                    ? "translate-x-0 opacity-100 blur-none"
+                    : "translate-x-30 opacity-0 blur-lg"
+                } transition-all duration-1500`}
+              >
+                Excellence.
+              </span>
+              <div
+                className={`${
+                  EngineeringVisible
+                    ? "translate-y-0 opacity-100 blur-none"
+                    : "translate-y-30 opacity-0 blur-lg"
+                } transition-all duration-1500 delay-500 flex flex-row`}
+              >
                 <ButtonLink path="/teams">Our Teams</ButtonLink>
                 <ButtonLink path="/join">Join Us</ButtonLink>
               </div>
@@ -90,33 +127,36 @@ function Home() {
 
           <div
             ref={welcomeRef}
-            className={`${
-              welcomeVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-30"
-            } flex flex-col items-start transition-all duration-700 top-20 my-30`}
+            className={`flex flex-col items-center sm:items-start transition-all duration-1000 top-20 my-30`}
           >
-            <span className="text-gray-200 xl:w-fit w-min font-extralight text-left text-5xl sm:text-8xl mb-10 md:mx-60">
+            <span
+              ref={WelcomeSpanRef}
+              className={`${
+                WelcomeSpanVisible
+                  ? "translate-x-0 opacity-100 blur-none"
+                  : "-translate-x-30 opacity-0 blur-lg"
+              } transition-all duration-1500 text-neutral-400 xl:w-fit w-min text-left text-4xl sm:text-6xl mb-5 md:mx-60`}
+            >
               Welcome to <br />
-              <span className="font-[550] text-white z-10">
+              <span className="bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent text-6xl sm:text-8xl font-[600] z-10 transition-opacity delay-500 duration-1000">
                 Illini Electric Motorsports.{" "}
               </span>
-              <div
+              {/* <div
                 className={`${
-                  welcomeVisible ? "scale-x-100" : "scale-x-0"
-                } h-[10px] w-full transition-transform delay-700 duration-1000 rounded-full origin-left bg-linear-to-r from-orange-600 to-blue-800`}
-              ></div>
+                  welcomeVisible ? "scale-x-100 blur-none" : "scale-x-0 blur-lg"
+                } h-[15px] w-full transition-transform delay-1500 duration-2000 rounded-full origin-left bg-linear-to-r from-orange-600 to-blue-800`}
+              ></div> */}
             </span>
             <div
               className={`${
                 welcomeVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-30"
-              } transition-all duration-800 delay-500 flex flex-col xl:flex-row items-center justify-center mx-10 md:mx-20`}
+                  ? "opacity-100 blur-none translate-y-0"
+                  : "opacity-0 blur-lg translate-y-30"
+              } transition-all duration-1500 flex flex-col xl:flex-row items-center justify-center mx-10 md:mx-20`}
             >
-              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5">
+              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5 hover:-translate-y-2 transition-transform duration-500">
                 <img
-                  className="w-9/10 md:w-1/2 xl:h-[220px] xl:w-[400px] rounded-lg object-cover xl:mb-5"
+                  className="w-9/10 md:w-1/2 xl:h-[220px] xl:w-[400px] rounded-lg object-cover xl:mb-3"
                   src={landing1}
                   alt=""
                 />
@@ -124,7 +164,7 @@ function Home() {
                   <span className="text-white text-2xl mb-2">
                     An Engineering Club
                   </span>
-                  <span className="text-gray-200 font-light text-base">
+                  <span className="text-neutral-400 font-light text-base">
                     With our electrical, mechanical, and logistical teams (and a
                     multitude of different subteams under each), we engage in
                     every aspect of an engineering project, from design and
@@ -133,7 +173,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5">
+              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5 hover:-translate-y-2 transition-transform duration-500">
                 <img
                   className="w-9/10 md:w-1/2 xl:h-[220px] xl:w-[400px] rounded-lg object-cover mb-5"
                   src={landing2}
@@ -143,7 +183,7 @@ function Home() {
                   <span className="text-white text-2xl mb-2">
                     A Team Project
                   </span>
-                  <span className="text-gray-200 font-light text-base">
+                  <span className="text-neutral-400 font-light text-base">
                     Our teams do very different things, but are all focused on a
                     common goal: building a competition-ready car. Effectively
                     managing this ambitious project is challening, and requires
@@ -151,7 +191,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5">
+              <div className="landing-card shadow-2xl shadow-white/20 items-center flex flex-col md:flex-row xl:flex-col w-full md:w-2/3 xl:w-1/4 bg-black/50 border-[0.25px] border-gray-400 p-5 rounded-2xl mx-5 mt-5 hover:-translate-y-2 transition-transform duration-500">
                 <img
                   className="w-9/10 md:w-1/2 xl:h-[220px] xl:w-[400px] rounded-lg object-cover mb-5"
                   src={team_pic}
@@ -159,7 +199,7 @@ function Home() {
                 />
                 <div className="flex flex-col md:mx-5 xl:mx-0 md:my-0 xl:mt-5">
                   <span className="text-white text-2xl mb-2">A Community</span>
-                  <span className="text-gray-200 font-light text-base">
+                  <span className="text-neutral-400 font-light text-base">
                     With everyone unified under a common goal, our teams must
                     work together closely and communicate effectively in order
                     to achieve our goal. We aim to unite people from all
@@ -175,9 +215,9 @@ function Home() {
             ref={bannerRef}
             className={`${
               bannerIsVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-200"
-            } banner flex flex-col mx-auto w-3/4 xl:w-2/3 justify-between my-30`}
+                ? "translate-y-0 blur-none opacity-100"
+                : "translate-y-30 blur-lg opacity-0"
+            } transition-all duration-1000 flex flex-col mx-auto w-3/4 xl:w-2/3 justify-between my-30`}
           >
             <div className="">
               <span className="text-white text-2xl font-extralight">
@@ -193,10 +233,10 @@ function Home() {
 
           <div
             ref={offerRef}
-            className={`transition-all ease-in-out duration-800 flex justify-center my-30 ${
+            className={`transition-all duration-1000 flex justify-center my-30 ${
               offerIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
+                ? "translate-y-0 opacity-100 blur-none"
+                : "translate-y-20 opacity-0 blur-lg"
             }`}
           >
             <div className="flex flex-col p-10 rounded-lg w-full items-center justify-center mx-20">
@@ -215,7 +255,7 @@ function Home() {
                             </span>
                             <FaUserTie className="text-white size-[25px]" />
                           </div>
-                          <span className="text-gray-200 text-base font-extralight">
+                          <span className="text-neutral-400 text-base font-extralight">
                             We host networking events with companies like John
                             Deere, Rivian, Boeing, GM, SpaceX, and others. Build
                             your network and learn about these fantastic
@@ -231,7 +271,7 @@ function Home() {
                             </span>
                             <GrGrow className="text-green-500 size-[25px]" />
                           </div>
-                          <span className="text-gray-200 text-base font-extralight">
+                          <span className="text-neutral-400 text-base font-extralight">
                             We are always on the lookout for things to improve
                             within our projects. There is always something to
                             work on, whether you are a complete beginner or a
@@ -247,7 +287,7 @@ function Home() {
                             </span>
                             <FaToolbox className="text-[#734700] size-[25px]" />
                           </div>
-                          <span className="text-gray-200 text-base font-extralight">
+                          <span className="text-neutral-400 text-base font-extralight">
                             We offer the opportunity to design, prototype, and
                             build with industry-standard tools. Sharpen your
                             skillset with tools like CAD (PTC Creo), GitLab,
@@ -263,7 +303,7 @@ function Home() {
                             </span>
                             <RiUserCommunityLine className="text-blue-300 size-[25px]" />
                           </div>
-                          <span className="text-gray-200 text-base font-extralight">
+                          <span className="text-neutral-400 text-base font-extralight">
                             Our project leads are very experienced and talented
                             people, and always willing to help. Connect to learn
                             more about their experiences, engineering,
@@ -272,9 +312,8 @@ function Home() {
                         </div>
                       </CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious className="cursor-pointer bg-black text-white border-none hover:bg-black hover:text-white hover:scale-x-103 hover:-translate-x-3 transition duration-300 -left-20" />
-                    <CarouselNext className="cursor-pointer bg-black text-white border-none hover:bg-black hover:text-white hover:scale-x-103 hover:translate-x-3 transition duration-300 -right-20" />
-
+                    <CarouselPrevious className="cursor-pointer bg-black text-white border-none hover:text-neutral-400 hover:bg-black  scale-150  transition duration-300 -left-20" />
+                    <CarouselNext className="cursor-pointer bg-black text-white border-none hover:text-neutral-400 hover:bg-black scale-150 transition duration-300 -right-20" />
                     <div className="absolute xl:opacity-100 opacity-0 right-0 top-0 rotate-180 gradient-left h-full w-[100px] z-10"></div>
                     <div className="absolute xl:opacity-100 opacity-0 left-0 top-0 gradient-left h-full w-[100px] z-10"></div>
                   </Carousel>
@@ -285,42 +324,42 @@ function Home() {
 
           <div
             ref={statsRef}
-            className={`flex flex-col items-center transition-all ease-in-out duration-800 flex justify-center my-30 ${
+            className={`flex flex-col items-center transition-all ease-in-out duration-1000 flex justify-center my-30 ${
               statsIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
+                ? "translate-y-0 opacity-100 blur-none"
+                : "translate-y-20 opacity-0 blur-lg"
             }`}
           >
             <div className="flex flex-row w-full justify-center text-start">
               <span
                 className={`${
                   exiting ? "translate-y-15" : "translate-y-0"
-                } text-white text-6xl font-extralight text-center mb-10 transition-all duration-800`}
+                } text-neutral-400 text-3xl font-light text-center mb-10 transition-all duration-1000 z-10 `}
               >
                 We have students in <br />
                 <span
                   className={`${
                     exiting
-                      ? "opacity-0 translate-y-4"
-                      : "opacity-100 translate-y-0"
-                  } text-blue-600 transition-all duration-800 inline-block font-[750] z-0`}
+                      ? "opacity-0 translate-y-4 blur-lg"
+                      : "opacity-100 translate-y-0 blur-none"
+                  } bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent text-7xl transition-all duration-1000 px-5 pb-5 inline-block font-[800]`}
                 >
                   {majorSelection}
                 </span>
               </span>
             </div>
-            <div className="flex flex-col items-center w-full transition-all ease-in-out z-10 duration-800 flex justify-center">
-              <div className="flex flex-col w-3/5 text-center border-[0.25px] border-gray-400/50 shadow-xl shadow-white/8 my-5 p-3 py-10 rounded-3xl">
-                <span className="text-2xl text-gray-200 font-light mb-5">
+            <div className="flex flex-col items-center w-full transition-all ease-in-out z-10 duration-1000 flex justify-center">
+              <div className="flex flex-col w-3/5 text-center border-[0.25px] border-gray-400/50 shadow-xl shadow-white/8 p-3 py-10 rounded-3xl">
+                <span className="text-3xl text-neutral-400 font-light mb-5">
                   About our members
                 </span>
                 <div className="flex flex-col xl:flex-row justify-around mb-5">
                   <CountUp end={2000} duration={3000} label="Members" />
-                  <CountUp end={20} duration={2500} label="Majors" />
+                  <CountUp end={20} duration={1500} label="Majors" />
                   <CountUp end={1000} duration={3000} label="Alumni" />
                   <CountUp end={4} duration={1000} label="Continents" />
                 </div>
-                <span className="text-2xl text-gray-200 font-light">
+                <span className="text-3xl text-neutral-400 font-light">
                   No experience required.
                 </span>
               </div>

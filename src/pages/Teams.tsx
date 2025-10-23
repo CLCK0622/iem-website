@@ -21,14 +21,14 @@ const Teams = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const textIsVisible = useIsVisible(textRef, 0.3);
   return (
-    <div className="flex flex-col justify-center text-center mt-15">
+    <div className="flex flex-col justify-center text-center mt-20">
       <div
         ref={textRef}
         className={`${
           textIsVisible ? "opacity-100" : "opacity-0"
         } flex flex-col justify-center mb-5 mx-10`}
       >
-        <span className="text-white font-[400] text-6xl mb-3">Our Teams</span>
+        <span className="text-white font-[450] text-7xl mb-3">Our Teams</span>
       </div>
       <div className="flex flex-col w-full lg:flex-row lg:justify-center">
         <TeamCard

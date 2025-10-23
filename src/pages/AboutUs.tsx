@@ -1,91 +1,198 @@
 import { useIsVisible } from "../util/visibilityDetector.ts";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-import ButtonLink from "../components/ButtonLink.tsx";
-import video from "../assets/IEM-video-final.mp4";
-import team_pic from "../assets/iem-team-pic.png";
 import team_pic_2 from "../assets/iem-team-2.jpg";
-import CompanyBanner from "../components/CompanyBanner.tsx";
-import CountUp from "../components/Counter.tsx";
-import { companyIcons, sponsorIcons } from "../util/companyIcons.ts";
+import car_pic from "../assets/iem-car-pic.png";
+import landing_card_1 from "../assets/landing-card-1.png";
+import landing_card_2 from "../assets/landing-card-2.png";
+import LeadPic from "@/components/LeadPic.tsx";
 
-import { FaUserTie } from "react-icons/fa6";
-import { FaToolbox } from "react-icons/fa";
-import { RiUserCommunityLine } from "react-icons/ri";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel.tsx";
 
 function AboutUs() {
   const historyRef = useRef<HTMLDivElement>(null);
   const historyIsVisible = useIsVisible(historyRef, 0.3);
 
-  const doRef = useRef<HTMLDivElement>(null);
-  const doIsVisible = useIsVisible(doRef, 0.3);
+  const summaryRef = useRef<HTMLDivElement>(null);
+  const summaryIsVisible = useIsVisible(summaryRef, 0.3);
 
-  const offerRef = useRef<HTMLDivElement>(null);
-  const offerIsVisible = useIsVisible(offerRef, 0.3);
+  const captainsRef = useRef<HTMLDivElement>(null);
+  const captainsIsVisible = useIsVisible(captainsRef, 0.3);
 
-  const bannerRef = useRef<HTMLDivElement>(null);
-  const bannerIsVisible = useIsVisible(bannerRef, 0.5);
-
-  const joinRef = useRef<HTMLDivElement>(null);
-  const joinIsVisible = useIsVisible(joinRef, 0.3);
+  const subteamsRef = useRef<HTMLDivElement>(null);
+  const subteamsIsVisible = useIsVisible(subteamsRef, 0.3);
 
   return (
     <>
       <div className="container min-w-screen">
-        <div className="min-h-screen">
+        <div className="flex flex-col items-center min-h-screen">
           <div
-            ref={historyRef}
-            className={`transition-all ease-in-out duration-1000 flex justify-center my-8 ${
-              historyIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
-            }`}
+            ref={summaryRef}
+            className={`transition-all ease-in-out duration-1000 w-2/3 flex mt-20 ${
+              summaryIsVisible
+                ? "opacity-100 blur-none translate-y-0"
+                : "opacity-0 blur-lg translate-y-20"
+            } transition-all duration-1500`}
           >
-            <div className="logo-bg flex flex-col">
-              <span className="text-6xl text-white">Our History</span>
-              <span className="text-white text-lg font-light">
-                Since 1979, we have been racing Illini, fostering various teams
-                specializing in combustion, hybrid, and fully electric vehicles.
-                Today, we are embarking on a new milestone in our history by
-                merging Illini Motorsports with Illini Formula Electric,
-                becoming a singular formula electric team. With a rich legacy
-                and forty-four years of experience across different vehicle
-                technologies, Illini Electric Motorsports, will continue the
-                tradition of success and innovation.
+            <div className="flex flex-col">
+              <span className="text-white font-[450] text-7xl mb-3">
+                Empowering the <br />
+                next generation of engineers.
               </span>
+              <span className="text-xl font-light text-neutral-400">
+                As one of the foremost engineering clubs at a leading
+                engineering institution, our annual mission is to build a
+                competition-ready vehicle while providing unmatched real-world
+                project-based experience to our members.
+              </span>
+              <Carousel className="my-5" opts={{ loop: true }}>
+                <CarouselContent className="flex">
+                  <CarouselItem className="">
+                    <div>
+                      <img className="rounded-2xl" src={team_pic_2} />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="">
+                    <div>
+                      <img className="rounded-2xl" src={car_pic} />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="">
+                    <div>
+                      <img className="rounded-2xl" src={landing_card_1} />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="">
+                    <div>
+                      <img className="rounded-2xl" src={landing_card_2} />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="cursor-pointer bg-black text-white border-none hover:text-neutral-400 hover:bg-black  scale-150  transition duration-300 left-5" />
+                <CarouselNext className="cursor-pointer bg-black text-white border-none hover:text-neutral-400 hover:bg-black scale-150 transition duration-300 right-5" />
+              </Carousel>
             </div>
           </div>
-          <div
-            ref={doRef}
-            className={`transition-all ease-in-out duration-1000 flex justify-center my-8 ${
-              doIsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
-            }`}
-          >
-            <div className="flex flex-col xl:flex-row p-10 rounded-lg w-full items-center justify-center my-10">
-              <div className="flex flex-col mx-5 w-[500px] xl:w-sm">
-                <span className="text-6xl font-semibold text-white mb-3">
-                  What we Do
-                </span>
-                <span className="text-lg font-light text-white">
-                  While Formula SAE Electric is heavily centered around
-                  engineering, it is a project management competition at its
-                  core. Our primary focus is on efficiently managing an
-                  ambitious project while nurturing member growth, equipping
-                  them with the skills and confidence to excel in their roles
-                  today and preparing them for their future endeavors. Our teams
-                  touch every area that real-world engineering projects would,
-                  from aerodynamics and low/high-voltage, to battery management
-                  and circuit design, to software and infrastructure, to
-                  business. Wherever your skills lie, we have a place for you!
-                </span>
+
+          <div className="transition-all ease-in-out duration-1000 w-2/3 flex mt-20">
+            <div className="flex flex-col w-full">
+              <div
+                ref={captainsRef}
+                className={`${
+                  captainsIsVisible
+                    ? "opacity-100 blur-none translate-y-0"
+                    : "opacity-0 blur-lg translate-y-30"
+                } transition-all duration-1500`}
+              >
+                <span className="text-white font-[450] text-5xl">Captains</span>
+                <div className="mt-10 grid grid-cols-2 grid-rows-1">
+                  <LeadPic
+                    name="Ethan Peng"
+                    title="Captain"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/ethanccpeng/"
+                  />
+                  <LeadPic
+                    name="Pranav Budhia"
+                    title="Mechanical Captain"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/pranav-budhia/"
+                  />
+                </div>
               </div>
-              <img
-                className="size-[500px] object-cover mx-5 rounded-xl transition duration-300 hover:scale-105"
-                src={team_pic_2}
-                alt=""
-              />
+              <div
+                ref={subteamsRef}
+                className={`${
+                  subteamsIsVisible
+                    ? "opacity-100 blur-none translate-y-0"
+                    : "opacity-0 blur-lg translate-y-30"
+                } transition-all duration-1500`}
+              >
+                <span className="text-white font-[450] text-5xl">
+                  Subteam Leads
+                </span>
+                <div className="mt-10 w-full grid grid-cols-4 grid-rows-1">
+                  <LeadPic
+                    name="Derin Sozen"
+                    title="Infrastructure"
+                    email="dsozen@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/derin-sozen/"
+                  />
+                  <LeadPic
+                    name="Jamie Pruett"
+                    title="Software"
+                    email="jpruett@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/jdspruett/"
+                  />
+                  <LeadPic
+                    name="Avi Patel"
+                    title="Business"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/avi-patel-b210b3274/"
+                  />
+                  <LeadPic
+                    name="Ryan Men"
+                    title="Low Voltage"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/ryan-men/"
+                  />
+                  <LeadPic
+                    name="Satvik Reddy"
+                    title="Circuit Design"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/satvik-reddy-uiuc/"
+                  />
+                  <LeadPic
+                    name="Riddhika Parmar"
+                    title="Cockpit"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/riddhika-parmar/"
+                  />
+                  <LeadPic
+                    name="Ariela Libova"
+                    title="Integration"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/ariela-libova/"
+                  />
+                  <LeadPic
+                    name="Michael Wagner"
+                    title="Vehicle Dynamics"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/michael-wagner-21a637276/"
+                  />
+                  <LeadPic
+                    name="Tate Leventhal"
+                    title="Aerodynamics"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/tateleventhal/"
+                  />
+                  <LeadPic
+                    name="Dhriti Chichila"
+                    title="Powertrain"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/dhriti-chichila/"
+                  />
+                  <LeadPic
+                    name="Andre Chen"
+                    title="Outboard Structures"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/andre-e-chen/"
+                  />
+
+                  <LeadPic
+                    name="David Melchor"
+                    title="Chassis"
+                    email="idk@illinois.edu"
+                    linkedin="https://www.linkedin.com/in/davidmelchorh/"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
