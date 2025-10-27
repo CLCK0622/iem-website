@@ -23,7 +23,7 @@ const LeadPic = ({ name, title, email, linkedin }: LeadPicProps) => {
   };
   return (
     <div className="flex flex-col items-center mb-5">
-      <RxAvatar className="size-[200px]" color="white" />
+      <RxAvatar className="size-[150px]" color="white" />
       <span className="text-white text-xl">{name}</span>
       <span className="text-neutral-400">{title}</span>
       <div className="flex flex-row">

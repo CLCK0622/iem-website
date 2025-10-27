@@ -30,11 +30,11 @@ function AboutUs() {
 
   return (
     <>
-      <div className="container min-w-screen">
-        <div className="flex flex-col items-center min-h-screen">
+      <div className="flex justify-center container min-w-screen">
+        <div className="flex flex-col min-h-screen w-2/3">
           <div
             ref={summaryRef}
-            className={`transition-all ease-in-out duration-1000 w-2/3 flex mt-20 ${
+            className={`transition-all ease-in-out duration-1000 flex mt-20 ${
               summaryIsVisible
                 ? "opacity-100 blur-none translate-y-0"
                 : "opacity-0 blur-lg translate-y-20"
@@ -43,7 +43,10 @@ function AboutUs() {
             <div className="flex flex-col">
               <span className="text-white font-[450] text-7xl mb-3">
                 Empowering the <br />
-                next generation of engineers.
+                <span className="text-transparent bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text italic">
+                  next generation
+                </span>{" "}
+                of engineers.
               </span>
               <span className="text-xl font-light text-neutral-400">
                 As one of the foremost engineering clubs at a leading
@@ -80,7 +83,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="transition-all ease-in-out duration-1000 w-2/3 flex mt-20">
+          <div className="transition-all duration-1000 flex mt-20">
             <div className="flex flex-col w-full">
               <div
                 ref={captainsRef}
@@ -88,7 +91,7 @@ function AboutUs() {
                   captainsIsVisible
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-lg translate-y-30"
-                } transition-all duration-1500`}
+                } transition-all duration-1500 my-5`}
               >
                 <span className="text-white font-[450] text-5xl">Captains</span>
                 <div className="mt-10 grid grid-cols-2 grid-rows-1">
@@ -112,7 +115,7 @@ function AboutUs() {
                   subteamsIsVisible
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-lg translate-y-30"
-                } transition-all duration-1500`}
+                } transition-all duration-1500 my-5`}
               >
                 <span className="text-white font-[450] text-5xl">
                   Subteam Leads
@@ -193,6 +196,20 @@ function AboutUs() {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+          <div
+            ref={historyRef}
+            className={`transition-all ease-in-out duration-1000 flex mt-20 ${
+              historyIsVisible
+                ? "opacity-100 blur-none translate-y-0"
+                : "opacity-0 blur-lg translate-y-20"
+            } transition-all duration-1500`}
+          >
+            <div>
+              <span className="text-white font-[450] text-7xl mb-3">
+                Our History
+              </span>
             </div>
           </div>
         </div>

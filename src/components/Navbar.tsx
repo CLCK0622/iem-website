@@ -1,32 +1,32 @@
-import Navlink from "./Navlink";
+import NavDropdown from "./NavDropdown";
 
 import "../index.css";
 import logo from "../assets/iem-logo.svg";
 
 const Navbar = () => {
   return (
-    <nav className="navbar z-50 flex flex-row items-center justify-between sticky fixed top-0 p-7 text-2xl font-light relative bg-black border-b border-gray-400/50">
+    <nav className="navbar z-50 flex flex-row items-center justify-between sticky fixed top-0 px-7 py-5 text-2xl font-light nav-gradient">
       <a className="flex items-center" href="/home">
-        <img className="size-[40px] mr-4" src={logo} alt="" />
-        <span className="text-white">Illini Electric Motorsports</span>
+        <img className="size-[60px] mr-4" src={logo} alt="" />
+        <span className="text-5xl text-white italic font-[1000]">IEM.</span>
       </a>
       <div className="flex mr-8">
-        <Navlink
+        <NavDropdown
           name="About"
           dropdown={["About Us", "Teams", "Join"]}
           links={["/about", "/teams", "/join"]}
         />
-        <Navlink
+        <NavDropdown
           name="Sponsors"
           dropdown={["Our Sponsors", "Become a Sponsor"]}
           links={["/sponsors"]}
         />
-        <Navlink
+        <NavDropdown
           name="Cars"
           dropdown={["Electric", "Combustion"]}
           links={["/cars#electric", "/cars#combustion"]}
         />
-        <Navlink
+        <NavDropdown
           name="Contact"
           dropdown={["Email", "LinkedIn", "Instagram"]}
           links={[

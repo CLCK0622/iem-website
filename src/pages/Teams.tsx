@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import TeamCard from "../components/TeamCard";
 
 import { BiSolidZap } from "react-icons/bi";
@@ -12,8 +12,6 @@ import {
   MechNames,
   LogNames,
   ElectricalBodies,
-  MechBodies,
-  LogBodies,
 } from "../util/teamData";
 import { useIsVisible } from "../util/visibilityDetector";
 
@@ -28,7 +26,9 @@ const Teams = () => {
           textIsVisible ? "opacity-100" : "opacity-0"
         } flex flex-col justify-center mb-5 mx-10`}
       >
-        <span className="text-white font-[450] text-7xl mb-3">Our Teams</span>
+        <span className="text-white text-7xl w-fit mx-auto mb-3">
+          Our Teams
+        </span>
       </div>
       <div className="flex flex-col w-full lg:flex-row lg:justify-center">
         <TeamCard
@@ -65,12 +65,6 @@ const Teams = () => {
           create infrastructure. You will get the opportunity to work on a large
           team with internationally sized challenges.
         </TeamCard>
-      </div>
-      <div className="flex flex-col items-center mt-10">
-        <span className="text-2xl text-white">
-          Interested? Find out how to join us here!
-        </span>
-        <ButtonLink path="/join">Join Us</ButtonLink>
       </div>
     </div>
   );

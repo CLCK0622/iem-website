@@ -15,10 +15,10 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
     setOpen(!open);
   };
   return (
-    <div className="cursor-pointer rounded-lg border-[0.25px] border-slate-300/50 my-1 w-full text-white">
+    <div className="cursor-pointer rounded-lg border-[0.25px] border-neutral-400/30 hover:border-neutral-400/70 transition-all duration-300 my-1 w-full text-white">
       <button
         onClick={handleClick}
-        className="rounded-lg items-center cursor-pointer w-full px-3 py-2 flex flex-row text-start z-10 transition-color duration-300 hover:text-neutral-300"
+        className="rounded-lg items-center cursor-pointer w-full px-3 py-2 flex flex-row text-start z-10 transition-color duration-300 "
       >
         <span>
           <MdKeyboardArrowRight
@@ -35,8 +35,8 @@ const AccordionItem = ({ label, body }: AccordionProps) => {
       <div
         className={
           open
-            ? "cursor-text transition-transform duration-200 font-light text-left px-3 py-2 ease-in-out scale-y-100 origin-top"
-            : "scale-y-0 h-0 transition-transform duration-200 origin-top"
+            ? "cursor-text font-light text-left px-3 py-2 ease-in-out scale-y-100 origin-top"
+            : "scale-y-0 h-0 origin-top"
         }
       >
         <span

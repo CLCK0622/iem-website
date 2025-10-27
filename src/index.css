@@ -1,12 +1,35 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+}
+
 #root {
   min-height: 100vh;
-  background-color: black;
+  background-color: #0f0f0f;
+}
+
+.nav-gradient {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0.075) 75.5%,
+    rgba(0, 0, 0, 0.037) 82.85%,
+    rgba(0, 0, 0, 0.019) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .mid-container {
-  background-image: linear-gradient(360deg, black 10%, rgb(79, 78, 78, 0));
+  background-image: linear-gradient(360deg, #0f0f0f 10%, rgb(79, 78, 78, 0));
 }
 
 .video {
@@ -15,11 +38,11 @@
 }
 
 .gradient-left {
-  background-image: linear-gradient(90deg, black, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(90deg, #0f0f0f, rgba(255, 255, 255, 0));
 }
 
 .gradient-right {
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), black);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), #0f0f0f);
 }
 
 .logo-bg {
@@ -28,7 +51,7 @@
 }
 
 .banner {
-  transition: blur 2s;
+  transition: blur 1.5s, opacity 1.5s;
 }
 
 .banner-wrapper {

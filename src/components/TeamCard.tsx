@@ -30,12 +30,14 @@ const TeamCard = ({
         cardIsVisible
           ? "opacity-100 translate-y-0 blur-none"
           : "opacity-0 translate-y-30 blur-lg"
-      } transition-all duration-800 flex flex-col w-5/6 lg:w-1/4 px-8 p-5 rounded-2xl text-start cursor-default text-white mx-auto lg:mx-5 my-3 border-[0.25px] border-gray-400/50`}
+      } transition-all duration-800 flex flex-col w-5/6 lg:w-1/4 px-8 p-5 rounded-2xl text-start cursor-default text-white mx-auto lg:mx-5 my-3 border-[0.25px] border-neutral-400/30 bg-neutral-900`}
     >
       <div className="flex flex-col h-fit mt-3">
-        <span className="flex flex-row items-baseline text-5xl my-3 font-[400]">
-          {title}
-          <Icon size={30} color={iconColor} className="mx-3" />
+        <span className="flex flex-row items-baseline text-5xl italic my-3 font-[400] w-fit h-fit">
+          <span className="bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text text-transparent">
+            {title}
+          </span>
+          <Icon size={33} className="mx-5 text-white" />
         </span>
         <span className="font-light text-neutral-400">{children}</span>
       </div>
