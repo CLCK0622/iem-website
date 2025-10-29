@@ -1,123 +1,141 @@
-import { useState } from "react";
+import {useState} from "react";
 
 import logo from "../assets/iem-logo.svg";
 
-import instagram from "../assets/company-logos/insta-logo.svg";
-import linkedin from "../assets/company-logos/linkedin-logo.svg";
+import {MdEmail} from "react-icons/md";
+import {IoCheckmark} from "react-icons/io5";
+import {FiArrowUpRight} from "react-icons/fi";
 
-import { MdEmail } from "react-icons/md";
-import { IoCheckmark } from "react-icons/io5";
-import { FiArrowUpRight } from "react-icons/fi";
+import {FaLinkedin, FaInstagram} from "react-icons/fa6";
 
 const Footer = () => {
-  const [copied, setCopied] = useState<boolean>(false);
-  const copyEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    navigator.clipboard
-      .writeText("team@illinielectricmotorsports.com")
-      .then(() => {
-        setCopied(true);
-      });
-  };
-  return (
-    <footer className="flex justify-center h-[300px] text-white pt-50 pb-20 px-10 h-fit">
-      <div className="flex flex-row h-fit">
-        <div className="flex flex-col justify-start items-center mx-10">
-          <a href="/home">
-            <img className="size-[75px]" src={logo} alt="" />
-          </a>
-          <span className="mt-3 text-white">Copyright IEM @2025.</span>
-        </div>
-        <div className="flex flex-col justify-start mx-10 text-xl font-light">
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/about"
-          >
-            About Us
-          </a>
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/teams"
-          >
-            Teams
-          </a>
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/join"
-          >
-            Join
-          </a>
-        </div>
-        <div className="flex flex-col justify-start mx-10 text-xl font-light">
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/sponsors"
-          >
-            Our Sponsors
-          </a>
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/sponsor-info"
-          >
-            Become a Sponsor
-          </a>
-        </div>
-        <div className="flex flex-col justify-start mx-10 text-xl font-light">
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/cars#electric"
-          >
-            Electric
-          </a>
-          <a
-            className="hover:text-neutral-400 transition duration-300"
-            href="/cars#combustion"
-          >
-            Combustion
-          </a>
-        </div>
-        <div className="flex flex-col justify-start mx-10 text-xl font-light">
-          <a
-            className="group flex flex-row items-center hover:text-neutral-400 transition duration-300"
-            href="/email"
-            onClick={copyEmail}
-          >
-            {!copied && (
-              <MdEmail className="transition duration-300 size-[25px]" />
-            )}
-            {copied && <IoCheckmark />}
-            <span className="ml-2">Email</span>
-          </a>
-          <a
-            className="mr-2 flex flex-row hover:text-neutral-400 transition duration-300"
-            href="https://linkedin.com/company/illini-electric-motorsports"
-            target="_blank"
-          >
-            <img className="size-[25px]" src={linkedin} alt="" />
-            <span className="ml-2">LinkedIn</span>
-          </a>
-          <a
-            className="mr-2 flex flex-row hover:text-neutral-400 transition duration-300"
-            href="https://www.instagram.com/illinoisfsae"
-            target="_blank"
-          >
-            <img className="size-[25px]" src={instagram} alt="" />
-            <span className="ml-2">Instagram</span>
-          </a>
-          <a
-            className="mr-2 group relative flex flex-row items-center hover:text-neutral-400 transition duration-300"
-            href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
-            target="_blank"
-          >
-            <FiArrowUpRight className="size-[25px] absolute left-0 group-hover:translate-x-25 transition-transform duration-400" />
-            <span className="pl-8 pr-0 group-hover:pl-0 group-hover:pr-8 bg-black transition-all duration-400">
-              Mailing List
-            </span>
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
+    const [copied, setCopied] = useState<boolean>(false);
+
+    const copyEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        navigator.clipboard
+            .writeText("team@illinielectricmotorsports.com")
+            .then(() => {
+                setCopied(true);
+                // Reset the checkmark after 1 seconds
+                setTimeout(() => {
+                    setCopied(false);
+                }, 1000);
+            });
+    };
+
+    return (
+        <footer className="w-full text-white px-10 min-h-[300px] flex items-center justify-center py-16">
+            <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12">
+                <div className="flex flex-col items-start">
+                    <a href="/home">
+                        <img className="size-[75px]" src={logo} alt="IEM Logo"/>
+                    </a>
+                    <span className="mt-3 text-sm text-neutral-400">
+                        Copyright IEM @2025.
+                    </span>
+                </div>
+
+                <div className="flex flex-col justify-start text-xl font-light space-y-3">
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/about"
+                    >
+                        About Us
+                    </a>
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/teams"
+                    >
+                        Teams
+                    </a>
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/join"
+                    >
+                        Join
+                    </a>
+                </div>
+
+                <div className="flex flex-col justify-start text-xl font-light space-y-3">
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/sponsors"
+                    >
+                        Our Sponsors
+                    </a>
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/sponsor-info"
+                    >
+                        Become a Sponsor
+                    </a>
+                </div>
+
+                <div className="flex flex-col justify-start text-xl font-light space-y-3">
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/cars#electric"
+                    >
+                        Electric
+                    </a>
+                    <a
+                        className="hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/cars#combustion"
+                    >
+                        Combustion
+                    </a>
+                </div>
+
+                <div className="flex flex-col justify-start text-xl font-light space-y-3">
+                    <a
+                        className="group flex flex-row items-center hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="/email"
+                        onClick={copyEmail}
+                    >
+                        {!copied && (
+                            <MdEmail className="transition-all duration-300 size-[25px]"/>
+                        )}
+                        {copied && (
+                            <IoCheckmark className="text-green-500 transition-all duration-300 size-[25px]"/>
+                        )}
+                        <span className="ml-2">Email</span>
+                    </a>
+                    <a
+                        className="flex flex-row items-center hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="https://linkedin.com/company/illini-electric-motorsports"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaLinkedin className="size-[25px]"/>
+                        <span className="ml-2">LinkedIn</span>
+                    </a>
+                    <a
+                        className="flex flex-row items-center hover:text-neutral-400 transition-colors duration-300 w-fit"
+                        href="https://www.instagram.com/illinoisfsae"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaInstagram className="size-[25px]"/>
+                        <span className="ml-2">Instagram</span>
+                    </a>
+                    <a
+                        className="group relative flex flex-row items-center hover:text-neutral-400 w-fit"
+                        href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FiArrowUpRight
+                            className="size-[25px] absolute left-0 group-hover:translate-x-25 transition-transform duration-250"/>
+                        <span
+                            className="pl-8 pr-0 group-hover:pl-0 group-hover:pr-8 bg-black transition-all duration-250">
+                            Mailing List
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;
