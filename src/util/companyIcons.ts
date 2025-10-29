@@ -17,6 +17,19 @@ import ansys from "../assets/company-logos/ansys.svg";
 import wwt from "../assets/company-logos/wwt.svg";
 import altium from "../assets/company-logos/altium.svg";
 import siemens from "../assets/company-logos/siemens.svg";
+import dwd from "../assets/company-logos/dwd.png";
+import bosch from "../assets/company-logos/bosch.svg";
+import stiwa from "../assets/company-logos/stiwa.svg";
+import connexion from "../assets/company-logos/connexion.svg";
+import matterandform from "../assets/company-logos/matterandform.svg";
+import silverthin from "../assets/company-logos/silverthin.svg";
+import skf from "../assets/company-logos/skf.svg";
+import kisssoft from "../assets/company-logos/kisssoft.svg";
+import ptc from "../assets/company-logos/ptc.svg";
+import vigrade from "../assets/company-logos/vigrade.svg";
+import stratasys from "../assets/company-logos/stratasys.svg";
+import renishaw from "../assets/company-logos/renishaw.svg";
+import lzmachine from "../assets/company-logos/lzmachine.svg";
 
 export const companyIcons = [
   { icon: apple },
@@ -42,4 +55,56 @@ export const sponsorIcons = [
   { icon: wwt },
   { icon: altium },
   { icon: siemens },
+];
+
+export const lithiumIcons = [
+  { icon: toray },
+  { icon: flyings },
+  { icon: milwaukee },
+  { icon: ford },
+  { icon: multimatic },
+];
+export const goldIcons = [
+  { icon: tesla },
+  { icon: deere },
+  { icon: ansys },
+  { icon: stratasys },
+  { icon: ptc },
+  { icon: vigrade },
+  { icon: wwt },
+  { icon: dwd },
+  { icon: bosch },
+  { icon: siemens },
+  { icon: stiwa },
+  { icon: connexion },
+  { icon: altium },
+  { icon: matterandform },
+  { icon: silverthin },
+  { icon: skf },
+  { icon: kisssoft },
+  { icon: renishaw },
+  { icon: lzmachine },
+  // { icon: spartan },
+];
+export const orangeIcons = [
+  { icon: apple },
+  { icon: nvidia },
+  { icon: spacex },
+  { icon: ford },
+  { icon: tesla },
+  { icon: cat },
+  { icon: pwc },
+  { icon: raytheon },
+  { icon: gm },
+];
+export const blueIcons = [
+  { icon: apple },
+  { icon: nvidia },
+  { icon: spacex },
+  { icon: ford },
+  { icon: tesla },
+  { icon: cat },
+  { icon: pwc },
+  { icon: raytheon },
+  { icon: gm },
 ];

@@ -29,7 +29,10 @@ const Join = () => {
     <div className="flex flex-col sm:w-2/3 mx-auto mt-20">
       <div className="flex flex-col w-full mb-3 items-start">
         <span className="text-white text-7xl  w-fit text-left">
-          Discover IEM.
+          Discover{" "}
+          <span className="bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text text-transparent italic">
+            IEM.
+          </span>
         </span>
         <span className="text-xl font-light text-neutral-400">
           Utilize our resources that get you familiar with our tools, subteams,

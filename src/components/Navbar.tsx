@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavDropdown
           name="Sponsors"
           dropdown={["Our Sponsors", "Become a Sponsor"]}
-          links={["/sponsors"]}
+          links={["/sponsors", "/sponsor-info"]}
         />
         <NavDropdown
           name="Cars"

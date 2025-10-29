@@ -13,18 +13,17 @@ const Banner = ({ icons, goesLeft }: BannerProps) => {
       } banner-wrapper relative rounded-xl flex max-w-screen w-full mx-auto transition-color duration-300`}
     >
       <div className="absolute gradient-left h-full w-[200px] z-10"></div>
-      <div className={`${goesLeft ? "left" : "right"} wrapper`}>
-        <div className={`${goesLeft ? "left" : "right"} icons`}>
+      <div className="wrapper">
+        <div className="icons">
           {icons.map(({ icon }) => (
             <img
               key={`${icon}-1`}
               className="company-icon flex-shrink-0 w-[50px] mx-10 object-contain "
               src={icon}
-              alt=""
             />
           ))}
         </div>
-        <div className={`${goesLeft ? "left" : "right"} icons`}>
+        <div className="icons">
           {icons.map(({ icon }) => (
             <img
               key={`${icon}-2`}

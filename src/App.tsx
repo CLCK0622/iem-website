@@ -7,6 +7,8 @@ import Layout from "./Layout";
 import Join from "./pages/Join";
 import Cars from "./pages/Cars";
 import AboutUs from "./pages/AboutUs";
+import Sponsors from "./pages/Sponsors";
+import SponsorInfo from "./pages/SponsorInfo";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,16 @@ const router = createBrowserRouter([
         index: true,
         path: "cars",
         element: <Cars />,
+      },
+      {
+        index: true,
+        path: "sponsors",
+        element: <Sponsors />,
+      },
+      {
+        index: true,
+        path: "sponsor-info",
+        element: <SponsorInfo />,
       },
     ],
   },
