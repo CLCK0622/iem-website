@@ -1,6 +1,5 @@
-import React, { useState, type HTMLAttributeAnchorTarget } from "react";
+import React, { useState } from "react";
 
-import { MdKeyboardArrowDown } from "react-icons/md";
 import { LuCopyPlus } from "react-icons/lu";
 import { LuCopyCheck } from "react-icons/lu";
 

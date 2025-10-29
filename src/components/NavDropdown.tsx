@@ -1,4 +1,4 @@
-import React, { useState, type HTMLAttributeAnchorTarget } from "react";
+import React, { useState } from "react";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdEmail } from "react-icons/md";

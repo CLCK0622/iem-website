@@ -7,7 +7,7 @@ interface TeamCardProps {
   children: React.ReactNode;
   title: string;
   icon: IconType;
-  iconColor: string;
+  // iconColor: string;
   subteamNames: string[];
   subteamBodies?: string[];
 }
@@ -17,7 +17,7 @@ const TeamCard = ({
   title,
   subteamNames,
   icon: Icon,
-  iconColor,
+  // iconColor,
   subteamBodies,
 }: TeamCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,3 @@
-import React from "react";
 import SponsorDisplay from "@/components/SponsorDisplay";
 import { goldIcons, lithiumIcons } from "@/util/companyIcons";
 import ShinyText from "../components/external/ShinyText";

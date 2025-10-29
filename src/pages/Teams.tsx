@@ -5,8 +5,6 @@ import { BiSolidZap } from "react-icons/bi";
 import { GiGears } from "react-icons/gi";
 import { FaChartBar } from "react-icons/fa";
 
-import ButtonLink from "../components/ButtonLink";
-
 import {
   ElectricalNames,
   MechNames,
@@ -34,7 +32,7 @@ const Teams = () => {
         <TeamCard
           title="Electrical"
           icon={BiSolidZap}
-          iconColor="#d6c242"
+          // iconColor="#d6c242"
           subteamNames={ElectricalNames}
           subteamBodies={ElectricalBodies}
         >
@@ -46,7 +44,7 @@ const Teams = () => {
         <TeamCard
           title="Mechanical"
           icon={GiGears}
-          iconColor="#737373ff"
+          // iconColor="#737373ff"
           subteamNames={MechNames}
         >
           Our mechanical subteams design, validate, and manufacture the physical
@@ -57,7 +55,7 @@ const Teams = () => {
         <TeamCard
           title="Logistical"
           icon={FaChartBar}
-          iconColor="#4a5ee0"
+          // iconColor="#4a5ee0"
           subteamNames={LogNames}
         >
           Our logistical subteams handle the business, media, and infrastructure

@@ -1,5 +1,3 @@
-import React from "react";
-
 const SponsorInfo = () => {
   return <div>SponsorInfo</div>;
 };
