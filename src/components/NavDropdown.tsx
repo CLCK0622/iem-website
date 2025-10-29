@@ -35,11 +35,11 @@ const Navlink = ({
         <MdKeyboardArrowDown className="mx-1 size-[20px] group-hover:-rotate-180 transition-transform duration-400" />
       </div>
       <div className="absolute top-full -mt-1 left-0 w-48 bg-black/60 backdrop-blur-xl text-white rounded-xl group-hover:shadow-lg shadow-black/30 border border-neutral-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 z-1">
-        <div className="py-2">
+        <div className="py-1">
           {dropdown.map((link, index) => (
             <React.Fragment key={index}>
               <a
-                className="flex text-lg px-3 py-2 my-1 mx-1 rounded-lg justify-between hover:bg-neutral-700/60 transition duration-300 ease-in-out items-center"
+                className="flex text-lg px-3 py-2 first:mt-0 last:mb-0 my-1 mx-1 rounded-lg justify-between hover:bg-neutral-700/60 transition duration-300 ease-in-out items-center"
                 href={index < links.length ? links[index] : ""}
                 onClick={(e) =>
                   handleClick(e, links.length ? links[index] : "")
