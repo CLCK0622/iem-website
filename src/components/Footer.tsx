@@ -32,7 +32,7 @@ const Footer = () => {
                         <img className="size-[75px]" src={logo} alt="IEM Logo"/>
                     </a>
                     <span className="mt-3 text-sm text-neutral-400">
-                        Copyright IEM @2025.
+                        &copy; {new Date().getFullYear()} IEM. All rights reserved.
                     </span>
                 </div>
 
