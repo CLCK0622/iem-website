@@ -109,8 +109,8 @@ const Footer = () => {
             href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
             target="_blank"
           >
-            <FiArrowUpRight className="size-[25px] absolute left-0 group-hover:translate-x-25 transition-transform duration-400" />
-            <span className="pl-8 pr-0 group-hover:pl-0 group-hover:pr-8 bg-black transition-all duration-400">
+            <FiArrowUpRight className="size-[25px] absolute left-0 group-hover:translate-x-26 transition-transform duration-400" />
+            <span className="pl-8 pr-0 group-hover:pl-0 group-hover:pr-9 transition-all duration-400">
               Mailing List
             </span>
           </a>
