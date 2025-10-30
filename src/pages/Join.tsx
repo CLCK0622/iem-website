@@ -30,7 +30,7 @@ const Join = () => {
       <div className="flex flex-col w-full mb-3 items-start">
         <span className="text-white text-7xl  w-fit text-left">
           Discover{" "}
-          <span className="bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text text-transparent italic">
+          <span className="bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text text-transparent italic">
             IEM.
           </span>
         </span>

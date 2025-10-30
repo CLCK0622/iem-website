@@ -43,7 +43,7 @@ function AboutUs() {
             <div className="flex flex-col">
               <span className="text-white font-[450] text-7xl mb-3">
                 Empowering the <br />
-                <span className="text-transparent bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text italic">
+                <span className="text-transparent bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text italic">
                   next generation
                 </span>{" "}
                 of engineers.

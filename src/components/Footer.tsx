@@ -125,7 +125,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FiArrowUpRight className="size-[25px] absolute left-0 group-hover:translate-x-25 transition-transform duration-250" />
+            <FiArrowUpRight className="size-[25px] absolute left-0 group-hover:translate-x-27 transition-transform duration-250" />
             <span className="pl-8 pr-0 group-hover:pl-0 group-hover:pr-8 transition-all duration-250">
               Mailing List
             </span>

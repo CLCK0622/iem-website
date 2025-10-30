@@ -21,8 +21,8 @@ const Teams = () => {
       <div
         ref={textRef}
         className={`${
-          textIsVisible ? "opacity-100" : "opacity-0"
-        } flex flex-col justify-center mb-5 mx-10`}
+          textIsVisible ? "opacity-100 " : "opacity-0 translate-y-30 blur-lg"
+        } transition-all duration-1500 flex flex-col justify-center mb-5 mx-10`}
       >
         <span className="text-white text-7xl w-fit mx-auto mb-3">
           Our Teams

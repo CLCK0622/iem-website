@@ -9,7 +9,7 @@ const Sponsors = () => {
       <div className="flex flex-col w-2/3 mt-20">
         <div>
           <span className="text-7xl text-white text-left mb-3">
-            <span className="text-transparent bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text italic">
+            <span className="text-transparent bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text italic">
               Our sponsors
             </span>{" "}
             <br /> make what we do possible.
@@ -28,7 +28,7 @@ const Sponsors = () => {
           <ShinyText
             color="lithium"
             speed={5}
-            className="text-5xl text-left mb-10"
+            className="text-4xl text-left mb-10"
             text="Lithium Level"
           />
           <SponsorDisplay
@@ -42,7 +42,7 @@ const Sponsors = () => {
           <ShinyText
             color="gold"
             speed={5}
-            className="text-5xl text-left mb-10"
+            className="text-4xl text-left mb-10"
             text="Gold Level"
           />
           <SponsorDisplay
@@ -56,7 +56,7 @@ const Sponsors = () => {
           <ShinyText
             color="orange"
             speed={5}
-            className="text-5xl text-left mb-10"
+            className="text-4xl text-left mb-10"
             text="Orange Level"
           />
           <SponsorDisplay
@@ -70,7 +70,7 @@ const Sponsors = () => {
           <ShinyText
             color="blue"
             speed={5}
-            className="text-5xl text-left mb-10"
+            className="text-4xl text-left mb-10"
             text="Blue Level"
           />
           <SponsorDisplay

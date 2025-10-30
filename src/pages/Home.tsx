@@ -140,7 +140,7 @@ function Home() {
                   WelcomeSpanVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-100 opacity-0"
-                } inline-block transition-all duration-1500 ease-[cubic-bezier(0.3,0.8,0.3,1.1)] bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text text-transparent text-6xl sm:text-8xl italic z-10 drop-shadow-2xl drop-shadow-(--gradient)`}
+                } inline-block transition-all duration-1500 ease-[cubic-bezier(0.3,0.8,0.3,1.1)] bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text text-transparent text-6xl sm:text-8xl italic z-10 drop-shadow-2xl drop-shadow-(--gradient)`}
               >
                 Illini Electric Motorsports.{" "}
               </span>
@@ -341,7 +341,7 @@ function Home() {
                     exiting
                       ? "opacity-0 translate-y-4 blur-lg"
                       : "opacity-100 translate-y-0 blur-none"
-                  }  text-transparent text-6xl sm:text-[85px] bg-linear-to-r from-[#37445A] to-[#FA6300] bg-clip-text transition-all duration-1000 pb-5 inline-block italic`}
+                  }  text-transparent text-6xl sm:text-[85px] bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text transition-all duration-1000 pb-5 inline-block italic`}
                 >
                   {majorSelection}
                 </span>
