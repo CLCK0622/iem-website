@@ -1,7 +1,17 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import ContentSwitcher from "@/components/ContentSwitcher.tsx";
 
-const FormField = ({id, label, type = "text", value, onChange, required = true, options = []}) => {
+interface FormFieldProps {
+    id: string;
+    label: string;
+    type?: "text" | "email" | "textarea" | "select";
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+    required?: boolean;
+    options?: { value: string; label: string }[];
+}
+
+const FormField: React.FC<FormFieldProps> = ({ id, label, type = "text", value, onChange, required = true, options = [] }) => {
 
     if (type === "textarea") {
         return (
@@ -68,9 +78,7 @@ const FormField = ({id, label, type = "text", value, onChange, required = true, 
                 value={value}
                 onChange={onChange}
                 required={required}
-                className={`w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200 ${
-                    type === "textarea" ? "h-32 resize-none" : ""
-                }`}
+                className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200"
                 placeholder={`Enter your ${label.toLowerCase()}...`}
             />
         </div>
@@ -110,8 +118,16 @@ const items = [
     },
 ];
 
+interface FormDataState {
+    name: string;
+    company: string;
+    email: string;
+    level: string;
+    message: string;
+}
+
 const SponsorInfo = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormDataState>({
         name: "",
         company: "",
         email: "",
@@ -119,7 +135,7 @@ const SponsorInfo = () => {
         message: "",
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -127,7 +143,7 @@ const SponsorInfo = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const {name, company, email, level, message} = formData;
