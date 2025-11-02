@@ -4,10 +4,15 @@ const items = [
   {
     label: "Company presentations",
     content: (
-      <span className="text-neutral-400">
-        Host networking events, present tech talks, and interact with top talent
-        .
-      </span>
+      <div className="flex flex-col">
+        <span className="text-white text-4xl">
+          Host events with top talent.
+        </span>
+        <span className="text-neutral-400">
+          Host networking events, present tech talks, and interact with top
+          talent.
+        </span>
+      </div>
     ),
   },
   {
