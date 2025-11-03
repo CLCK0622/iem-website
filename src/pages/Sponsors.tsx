@@ -18,10 +18,10 @@ const Sponsors = () => {
             className={`group relative items-center flex flex-row text-neutral-400 text-xl cursor-pointer text-nowrap w-fit py-3 transition-all duration-300 gap-1`}
             href="/sponsor-info"
           >
-            <span className="font-light">
-              Learn the why and how of becoming a sponsor today.
+            <span className="font-light group-hover:text-neutral-300 transition-all duration-300">
+              Learn the why and how of becoming a sponsor today
             </span>
-            <FiArrowRight className="absolute opacity-0 -right-5 transition-all duration-300 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0" />
+            <FiArrowRight className="absolute -right-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2" />
           </a>
         </div>
         <div className="flex flex-col mx-auto my-10">

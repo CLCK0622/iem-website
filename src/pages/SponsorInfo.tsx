@@ -1,147 +1,29 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ContentSwitcher from "@/components/ContentSwitcher.tsx";
+import FormField from "@/components/FormField";
 
-interface FormFieldProps {
-  id: string;
-  label: string;
-  type?: "text" | "email" | "textarea" | "select";
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => void;
-  required?: boolean;
-  options?: { value: string; label: string }[];
-}
-
-const FormField: React.FC<FormFieldProps> = ({
-  id,
-  label,
-  type = "text",
-  value,
-  onChange,
-  required = true,
-  options = [],
-}) => {
-  if (type === "textarea") {
-    return (
-      <div className="mb-6">
-        <label
-          htmlFor={id}
-          className="block text-sm font-medium text-gray-300 mb-2"
-        >
-          {label} {required && <span className="text-red-400">*</span>}
-        </label>
-        <textarea
-          id={id}
-          name={id}
-          value={value}
-          onChange={onChange}
-          required={required}
-          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200 h-32 resize-none"
-          placeholder={`Enter your ${label.toLowerCase()}...`}
-        />
-      </div>
-    );
-  }
-
-  if (type === "select") {
-    return (
-      <div className="mb-6">
-        <label
-          htmlFor={id}
-          className="block text-sm font-medium text-gray-300 mb-2"
-        >
-          {label} {required && <span className="text-red-400">*</span>}
-        </label>
-        <div className="relative">
-          <select
-            id={id}
-            name={id}
-            value={value}
-            onChange={onChange}
-            required={required}
-            className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white transition duration-200 appearance-none"
-          >
-            <option value="" disabled>
-              Select a {label.toLowerCase()}...
-            </option>
-            {options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-            <svg
-              className="fill-current h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="mb-6">
-      <label
-        htmlFor={id}
-        className="block ml-0 text-sm font-medium text-gray-300 mb-2"
-      >
-        {label} {required && <span className="text-red-400">*</span>}
-      </label>
-      <input
-        type={type}
-        id={id}
-        name={id}
-        value={value}
-        onChange={onChange}
-        required={required}
-        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200"
-        placeholder={`Enter your ${label.toLowerCase()}...`}
-      />
-    </div>
-  );
-};
+import PresentationInfo from "@/components/info_sections/PresentationInfo.tsx";
+import LogoInfo from "@/components/info_sections/LogoInfo.tsx";
+import ResumeInfo from "@/components/info_sections/ResumeInfo.tsx";
+import SocialInfo from "@/components/info_sections/SocialInfo.tsx";
+import { useIsVisible } from "@/util/visibilityDetector";
 
 const items = [
   {
     label: "Company presentations",
-    content: (
-      <span className="text-neutral-400">
-        Host networking events, present tech talks, and interact with top
-        talent.
-      </span>
-    ),
+    content: <PresentationInfo />,
   },
   {
     label: "Resume book access",
-    content: (
-      <span className="text-neutral-400">Get access to our resume book.</span>
-    ),
+    content: <ResumeInfo />,
   },
   {
     label: "Brand visibility",
-    content: (
-      <span className="text-neutral-400">
-        We provide premium brand visibility with our sponsorship packages. Logos
-        go on the car, jacket, and/or website.
-      </span>
-    ),
+    content: <LogoInfo />,
   },
   {
     label: "Social media promotion",
-    content: (
-      <span className="text-neutral-400">
-        We routinely post pictures on social media of your company's products,
-        detailing how they helped us in our operations.
-      </span>
-    ),
+    content: <SocialInfo />,
   },
 ];
 
@@ -154,6 +36,12 @@ interface FormDataState {
 }
 
 const SponsorInfo = () => {
+  const switcherRef = useRef<HTMLDivElement>(null);
+  const switcherVisible = useIsVisible(switcherRef, 0.3);
+
+  const formRef = useRef<HTMLDivElement>(null);
+  const formVisible = useIsVisible(formRef, 0.3);
+
   const [formData, setFormData] = useState<FormDataState>({
     name: "",
     company: "",
@@ -213,17 +101,25 @@ const SponsorInfo = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center text-center mt-20 min-h-screen text-white p-4 md:p-8">
-      <div className="flex justify-center container min-w-screen">
-        <div className="flex flex-col w-2/3 mt-20">
+    <div
+      ref={switcherRef}
+      className={`${
+        switcherVisible
+          ? "opacity-100 blur-none translate-y-0"
+          : "opacity-0 blur-lg translate-y-30"
+      } transition-all duration-1500 flex flex-col justify-center items-center text-center mt-20 min-h-screen text-white p-4 md:p-8`}
+    >
+      <div className="flex justify-center container mb-20">
+        <div className="flex flex-col w-full lg:w-2/3">
           <div className="flex flex-col mb-5">
             <span className="text-white font-[450] text-7xl w-fit mx-auto mb-3">
               Interested in sponsoring us?
             </span>
             <span className="text-xl font-light text-neutral-400">
-              Sponsoring Illini Electric Motorsports includes premium brand
-              visibility, extensive value-add benefits, and a strong
-              partnership.
+              Sponsoring Illini Electric Motorsports begins a symbiotic
+              relationship where we offer you visibility, recruiting resources,
+              and events, and you support us with your products and/or
+              donations.
             </span>
           </div>
           <div>
@@ -232,7 +128,14 @@ const SponsorInfo = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center mb-10 mx-5">
+      <div
+        ref={formRef}
+        className={`${
+          formVisible
+            ? "opacity-100 blur-none translate-y-0"
+            : "opacity-0 blur-lg translate-y-30"
+        } transition-all duration-1500 flex flex-col justify-center mb-10 mx-5`}
+      >
         <span className="text-white font-[450] text-7xl w-fit mx-auto mb-3 mt-10">
           Become a Sponsor
         </span>
@@ -242,7 +145,13 @@ const SponsorInfo = () => {
         </p>
       </div>
 
-      <div className="w-full max-w-2xl p-8 md:p-10">
+      <div
+        className={`${
+          formVisible
+            ? "opacity-100 blur-none translate-y-0"
+            : "opacity-0 blur-lg translate-y-30"
+        } transition-all duration-1500 w-full max-w-2xl p-8 md:p-10`}
+      >
         <form onSubmit={handleSubmit}>
           <FormField
             id="name"
