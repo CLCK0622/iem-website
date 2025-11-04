@@ -19,6 +19,9 @@ const LeadPic = ({ name, title, email, linkedin }: LeadPicProps) => {
     e.preventDefault();
     navigator.clipboard.writeText(email).then(() => {
       setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 1000);
     });
   };
   return (
@@ -28,7 +31,7 @@ const LeadPic = ({ name, title, email, linkedin }: LeadPicProps) => {
       <span className="text-neutral-400">{title}</span>
       <div className="flex flex-row">
         {copied ? (
-          <IoCheckmark className="size-[23px] mx-1" color="white" />
+          <IoCheckmark className="size-[23px] mx-1 text-green-500" />
         ) : (
           <MdEmail
             onClick={copyEmail}

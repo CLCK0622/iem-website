@@ -59,7 +59,7 @@ const FormField: React.FC<FormFieldProps> = ({
             value={value}
             onChange={onChange}
             required={required}
-            className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 text-gray-400 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white transition duration-200 appearance-none"
+            className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white transition duration-200 appearance-none"
           >
             <option value="" disabled>
               Select a {label.toLowerCase()}...
