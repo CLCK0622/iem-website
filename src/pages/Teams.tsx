@@ -2,7 +2,7 @@ import { useRef } from "react";
 import TeamCard from "../components/TeamCard";
 
 import { BiSolidZap } from "react-icons/bi";
-import { GiGears } from "react-icons/gi";
+import { FaGear } from "react-icons/fa6";
 import { FaChartBar } from "react-icons/fa";
 
 import {
@@ -43,7 +43,7 @@ const Teams = () => {
         </TeamCard>
         <TeamCard
           title="Mechanical"
-          icon={GiGears}
+          icon={FaGear}
           // iconColor="#737373ff"
           subteamNames={MechNames}
         >

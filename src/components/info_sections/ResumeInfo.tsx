@@ -11,7 +11,7 @@ const PresentationInfo = () => {
       )}
 
       <img
-        className={`w-full rounded-2xl mx-2 mb-5 ${
+        className={`w-full h-[450px] object-cover rounded-2xl mx-2 mb-5 ${
           imageLoaded ? "block" : "hidden"
         }`}
         src={pic}
