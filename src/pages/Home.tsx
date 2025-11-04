@@ -86,7 +86,7 @@ function Home() {
             <source src={video} type="video/mp4" />
           </video>
 
-          <div className="mid-container -bottom-35 pb-42 h-fit w-full absolute">
+          <div className="mid-container -bottom-30 pb-50 h-fit w-full absolute">
             <div className="flex flex-col items-center text-9xl md:text-9xl text-white/90 font-[600] mx-20">
               <span
                 ref={EngineeringRef}
@@ -356,7 +356,6 @@ function Home() {
                   <CountUp end={4} duration={800} label="Continents" />
                 </div>
               </div>
-              {/* <div className="bg-linear-to-b w-full from-white h-[100px] to-[#0f0f0f]"></div> */}
             </div>
             <div className="flex flex-col w-full my-10">
               <div className="flex flex-col xl:flex-row justify-between items-center">
