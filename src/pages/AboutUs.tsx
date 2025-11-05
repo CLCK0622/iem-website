@@ -1,11 +1,17 @@
 import { useIsVisible } from "../util/visibilityDetector.ts";
 import { useRef } from "react";
 
+import team_pic from "../assets/iem-team-pic.png";
 import team_pic_2 from "../assets/iem-team-2.jpg";
 import car_pic from "../assets/iem-car-pic.png";
 import landing_card_1 from "../assets/landing-card-1.png";
 import landing_card_2 from "../assets/landing-card-2.png";
 import LeadPic from "@/components/LeadPic.tsx";
+import car_pic2 from "@/assets/iem_car_pic_3.jpg";
+import car_pic3 from "@/assets/iem_car_pic_4.jpg";
+import car_pic4 from "@/assets/iem_car_pic5.jpg";
+import rivian_pic from "@/assets/rivian_pic2.jpg";
+import car_pic5 from "@/assets/Motorsports-13.jpg";
 
 import {
   Carousel,
@@ -54,26 +60,86 @@ function AboutUs() {
                 competition-ready vehicle while providing unmatched real-world
                 project-based experience to our members.
               </span>
-              <Carousel className="my-5" opts={{ loop: true }}>
+              <Carousel className="my-5 rounded-2xl" opts={{ loop: true }}>
                 <CarouselContent className="flex">
-                  <CarouselItem className="">
+                  <CarouselItem>
                     <div>
-                      <img className="rounded-2xl" src={team_pic_2} />
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={car_pic5}
+                      />
                     </div>
                   </CarouselItem>
-                  <CarouselItem className="">
+                  <CarouselItem>
                     <div>
-                      <img className="rounded-2xl" src={car_pic} />
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={team_pic}
+                      />
                     </div>
                   </CarouselItem>
-                  <CarouselItem className="">
+                  <CarouselItem>
                     <div>
-                      <img className="rounded-2xl" src={landing_card_1} />
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={rivian_pic}
+                      />
                     </div>
                   </CarouselItem>
-                  <CarouselItem className="">
+                  <CarouselItem>
                     <div>
-                      <img className="rounded-2xl" src={landing_card_2} />
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={car_pic4}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={car_pic3}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={car_pic2}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={team_pic_2}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={car_pic}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={landing_card_1}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div>
+                      <img
+                        className="rounded-2xl h-[600px] w-full object-cover"
+                        src={landing_card_2}
+                      />
                     </div>
                   </CarouselItem>
                 </CarouselContent>

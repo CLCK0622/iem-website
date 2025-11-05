@@ -86,7 +86,7 @@ function Home() {
             <source src={video} type="video/mp4" />
           </video>
 
-          <div className="mid-container -bottom-30 pb-50 h-fit w-full absolute">
+          <div className="mid-container -bottom-35 pb-50 h-fit w-full absolute">
             <div className="flex flex-col items-center text-9xl md:text-9xl text-white/90 font-semibold mx-20">
               <span
                 ref={EngineeringRef}
@@ -104,7 +104,7 @@ function Home() {
                   ExcellenceVisible
                     ? "translate-x-0 opacity-100 blur-none"
                     : "translate-x-30 opacity-0 blur-lg"
-                } transition-all duration-1500`}
+                } transition-all duration-1500 mb-5`}
               >
                 Excellence.
               </span>
