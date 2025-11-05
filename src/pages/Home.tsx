@@ -78,7 +78,7 @@ function Home() {
       <div className="container min-w-screen p-0">
         <div className="min-h-screen flex flex-col justify-center">
           <video
-            className="video relative min-w-[100vw] h-[101vh]"
+            className="video relative min-w-screen h-[102vh]"
             autoPlay
             loop
             muted
@@ -87,12 +87,12 @@ function Home() {
           </video>
 
           <div className="mid-container -bottom-30 pb-50 h-fit w-full absolute">
-            <div className="flex flex-col items-center text-9xl md:text-9xl text-white/90 font-[600] mx-20">
+            <div className="flex flex-col items-center text-9xl md:text-9xl text-white/90 font-semibold mx-20">
               <span
                 ref={EngineeringRef}
                 className={`${
                   EngineeringVisible
-                    ? "-translate-x-0 opacity-100 blur-none"
+                    ? "translate-x-0 opacity-100 blur-none"
                     : "-translate-x-30 opacity-0 blur-lg"
                 } transition-all duration-1500`}
               >
@@ -140,7 +140,7 @@ function Home() {
                   WelcomeSpanVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-100 opacity-0"
-                } inline-block transition-all duration-1500 ease-[cubic-bezier(0.3,0.8,0.3,1.1)] bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text text-transparent text-6xl sm:text-8xl italic z-10 drop-shadow-2xl drop-shadow-(--gradient)`}
+                } inline-block transition-all duration-1500 ease-[cubic-bezier(0.3,0.8,0.3,1.1)] bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text text-transparent text-6xl sm:text-8xl italic z-10`}
               >
                 Illini Electric Motorsports.{" "}
               </span>
@@ -320,7 +320,7 @@ function Home() {
 
           <div
             ref={statsRef}
-            className={`flex flex-col items-center mx-auto transition-all ease-in-out w-3/5 duration-1000 flex justify-center my-20 ${
+            className={`flex flex-col items-center mx-auto transition-all ease-in-out w-3/5 duration-1000 justify-center my-20 ${
               statsIsVisible
                 ? "translate-y-0 opacity-100 blur-none"
                 : "translate-y-20 opacity-0 blur-lg"
@@ -347,9 +347,9 @@ function Home() {
                 </span>
               </span>
             </div>
-            <div className="flex flex-col items-center w-full transition-all ease-in-out z-10 duration-1000 flex justify-center">
-              <div className="flex flex-col w-full text-center border-neutral-400/30 bg-linear-to-b w-full from-neutral-900 from-30% h-[100px] to-[#0f0f0f] px-10 pt-10 pb-60 xl:pb-40 rounded-t-3xl delay-1500 border-x-[0.25px] border-t-[0.25px] border-netural-400/50">
-                <div className="flex grid grid-cols-2 xl:grid-cols-4 gap-4">
+            <div className="flex flex-col items-center w-full transition-all ease-in-out z-10 duration-1000 justify-center">
+              <div className="flex flex-col text-center border-neutral-400/30 bg-linear-to-b w-full from-neutral-900 from-30% h-[100px] to-[#0f0f0f] px-10 pt-10 pb-60 xl:pb-40 rounded-t-3xl delay-1500 border-x-[0.25px] border-t-[0.25px] border-netural-400/50">
+                <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
                   <CountUp end={2000} duration={4000} label="Members" />
                   <CountUp end={20} duration={1500} label="Majors" />
                   <CountUp end={1000} duration={3000} label="Alumni" />

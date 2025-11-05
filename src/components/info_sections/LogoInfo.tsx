@@ -7,11 +7,11 @@ const PresentationInfo = () => {
   return (
     <div className="flex flex-col m-3 text-left">
       {!imageLoaded && (
-        <div className="w-full h-146 rounded-2xl mx-2 mb-5 bg-neutral-800 animate-pulse" />
+        <div className="w-full h-[450px] object-cover  rounded-2xl mx-2 mb-5 bg-neutral-800 animate-pulse" />
       )}
 
       <img
-        className={`w-full rounded-2xl mx-2 mb-5 ${
+        className={`w-full h-[450px] object-cover rounded-2xl mx-2 mb-5 ${
           imageLoaded ? "block" : "hidden"
         }`}
         src={pic}

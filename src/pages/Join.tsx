@@ -58,7 +58,7 @@ const Join = () => {
             </span>
             <div className="flex flex-col my-2">
               <div className="flex flex-row items-center">
-                <img className="size-[40px] my-5" src={mattermost} alt="" />
+                <img className="size-10 my-5" src={mattermost} alt="" />
                 <div className="flex flex-col ml-5">
                   <span className="text-white text-xl ">Mattermost</span>
                   <span className="text-neutral-400 font-light">
@@ -67,7 +67,7 @@ const Join = () => {
                 </div>
               </div>
               <div className="flex flex-row items-center">
-                <img className="size-[40px] my-5" src={confluence} alt="" />
+                <img className="size-10 my-5" src={confluence} alt="" />
                 <div className="flex flex-col ml-5">
                   <span className="text-white text-xl ">Confluence</span>
                   <span className="text-neutral-400 font-light">
@@ -76,7 +76,7 @@ const Join = () => {
                 </div>
               </div>
               <div className="flex flex-row items-center">
-                <img className="size-[40px] my-5" src={gitlab} alt="" />
+                <img className="size-10 my-5" src={gitlab} alt="" />
                 <div className="flex flex-col ml-5">
                   <span className="text-white text-xl ">GitLab</span>
                   <span className="text-neutral-400 font-light">
@@ -150,7 +150,7 @@ const Join = () => {
               getting access to Mattermost (our primary means of communication).
             </span>
             <a
-              className="group relative items-center flex flex-row text-white h-fit mr-3 bg-black/50 border-[0.25px] border-neutral-400/30 bg-neutral-900 hover:border-white/60 hover:pr-8 cursor-pointer rounded-xl w-fit px-4 py-3 transition-all duration-300 hover:shadow-lg shadow-white/20"
+              className="group relative items-center flex flex-row text-white h-fit mr-3 border-[0.25px] border-neutral-400/30 bg-neutral-900 hover:border-white/60 hover:pr-8 cursor-pointer rounded-xl w-fit px-4 py-3 transition-all duration-300 hover:shadow-lg shadow-white/20"
               target="_blank"
               href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
             >

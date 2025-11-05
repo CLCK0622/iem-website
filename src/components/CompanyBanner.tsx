@@ -18,7 +18,7 @@ const Banner = ({ icons, goesLeft }: BannerProps) => {
           {icons.map(({ icon }) => (
             <img
               key={`${icon}-1`}
-              className="company-icon flex-shrink-0 w-[50px] mx-10 object-contain "
+              className="company-icon shrink-0 w-[50px] mx-10 object-contain "
               src={icon}
             />
           ))}
@@ -27,7 +27,7 @@ const Banner = ({ icons, goesLeft }: BannerProps) => {
           {icons.map(({ icon }) => (
             <img
               key={`${icon}-2`}
-              className="company-icon flex-shrink-0 w-[50px] mx-10 object-contain "
+              className="company-icon shrink-0 w-[50px] mx-10 object-contain "
               src={icon}
               alt=""
             />

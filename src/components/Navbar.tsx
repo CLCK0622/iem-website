@@ -5,7 +5,7 @@ import logo from "../assets/iem-logo.svg";
 
 const Navbar = () => {
   return (
-    <nav className="navbar z-50 flex flex-row items-center justify-between sticky fixed top-0 px-7 py-5 text-2xl font-light nav-gradient backdrop-blur-lg">
+    <nav className="navbar z-50 flex flex-row items-center justify-between sticky top-0 px-7 py-5 text-2xl font-light nav-gradient backdrop-blur-lg">
       <a className="flex items-center" href="/home">
         <img className="size-[60px] mr-4" src={logo} alt="" />
         <span className="text-5xl text-white italic font-[1000]">IEM.</span>

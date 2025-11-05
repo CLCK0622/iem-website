@@ -14,12 +14,12 @@ const items = [
     content: <PresentationInfo />,
   },
   {
-    label: "Resume book access",
-    content: <ResumeInfo />,
-  },
-  {
     label: "Brand visibility",
     content: <LogoInfo />,
+  },
+  {
+    label: "Resume book access",
+    content: <ResumeInfo />,
   },
   {
     label: "Social media promotion",
@@ -37,10 +37,10 @@ interface FormDataState {
 
 const SponsorInfo = () => {
   const switcherRef = useRef<HTMLDivElement>(null);
-  const switcherVisible = useIsVisible(switcherRef, 0.3);
+  const switcherVisible = useIsVisible(switcherRef, 0.2);
 
   const formRef = useRef<HTMLDivElement>(null);
-  const formVisible = useIsVisible(formRef, 0.3);
+  const formVisible = useIsVisible(formRef, 0.2);
 
   const [formData, setFormData] = useState<FormDataState>({
     name: "",
@@ -105,21 +105,22 @@ const SponsorInfo = () => {
       ref={switcherRef}
       className={`${
         switcherVisible
-          ? "opacity-100 blur-none translate-y-0"
+          ? "opacity-100 blur-none"
           : "opacity-0 blur-lg translate-y-30"
       } transition-all duration-1500 flex flex-col justify-center items-center text-center mt-20 min-h-screen text-white p-4 md:p-8`}
     >
       <div className="flex justify-center container mb-20">
         <div className="flex flex-col w-full lg:w-2/3">
           <div className="flex flex-col mb-5">
-            <span className="text-white font-[450] text-7xl w-fit mx-auto mb-3">
+            <span className="text-white text-left font-[450] text-7xl w-fit mb-3">
               Interested in sponsoring us?
             </span>
-            <span className="text-xl font-light text-neutral-400">
+            <span className="text-xl font-light text-left text-neutral-400">
               Sponsoring Illini Electric Motorsports begins a symbiotic
-              relationship where we offer you visibility, recruiting resources,
-              and events, and you support us with your products and/or
-              donations.
+              partnership where we offer you visibility, promotion
+              opportunities, recruiting resources, and opportunities to host
+              events. We appreciate any support we receive from your products
+              and/or donations.
             </span>
           </div>
           <div>
