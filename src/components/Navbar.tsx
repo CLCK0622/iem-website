@@ -1,5 +1,3 @@
-import NavDropdown from "./NavDropdown";
-
 import "../index.css";
 import logo from "../assets/iem-logo.svg";
 import { FaLinkedin, FaInstagram } from "react-icons/fa6";

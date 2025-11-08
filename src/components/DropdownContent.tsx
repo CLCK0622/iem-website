@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Separator } from "./ui/separator";
+import { useState } from "react";
 
 interface DropdownContentProps {
   labels: string[];
