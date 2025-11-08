@@ -24,11 +24,11 @@ const Sponsors = () => {
             <FiArrowRight className="absolute -right-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2" />
           </a>
         </div>
-        <div className="flex flex-col mx-auto my-10">
+        <div className="flex flex-col items-center my-10 p-6">
           <ShinyText
             color="lithium"
-            speed={5}
-            className="text-4xl text-left mb-10"
+            speed={3}
+            className="text-2xl italic mb-10"
             text="Lithium Level"
           />
           <SponsorDisplay
@@ -38,11 +38,11 @@ const Sponsors = () => {
             iconSizePx={200}
           />
         </div>
-        <div className="flex flex-col mx-auto my-10">
+        <div className="flex flex-col items-center mx-auto my-10 p-6">
           <ShinyText
             color="gold"
-            speed={5}
-            className="text-4xl text-left mb-10"
+            speed={3}
+            className="text-2xl italic mb-10"
             text="Gold Level"
           />
           <SponsorDisplay
@@ -52,11 +52,11 @@ const Sponsors = () => {
             iconSizePx={120}
           />
         </div>
-        <div className="flex flex-col mx-auto my-10">
+        <div className="flex flex-col items-center mx-auto my-10 p-6">
           <ShinyText
             color="orange"
-            speed={5}
-            className="text-4xl text-left mb-10"
+            speed={3}
+            className="text-2xl italic mb-10"
             text="Orange Level"
           />
           <SponsorDisplay
@@ -66,11 +66,11 @@ const Sponsors = () => {
             iconSizePx={100}
           />
         </div>
-        <div className="flex flex-col mx-auto my-10">
+        <div className="flex flex-col items-center mx-auto my-10 p-6">
           <ShinyText
             color="blue"
-            speed={5}
-            className="text-4xl text-left mb-10"
+            speed={3}
+            className="text-2xl italic mb-10"
             text="Blue Level"
           />
           <SponsorDisplay

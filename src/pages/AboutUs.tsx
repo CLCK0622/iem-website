@@ -22,18 +22,17 @@ import {
 } from "@/components/ui/carousel.tsx";
 
 function AboutUs() {
-  const historyRef = useRef<HTMLDivElement>(null);
-  const historyIsVisible = useIsVisible(historyRef, 0.3);
-
   const summaryRef = useRef<HTMLDivElement>(null);
-  const summaryIsVisible = useIsVisible(summaryRef, 0.3);
+  const summaryIsVisible = useIsVisible(summaryRef, 0.2);
 
   const captainsRef = useRef<HTMLDivElement>(null);
-  const captainsIsVisible = useIsVisible(captainsRef, 0.3);
+  const captainsIsVisible = useIsVisible(captainsRef, 0.2);
 
   const subteamsRef = useRef<HTMLDivElement>(null);
-  const subteamsIsVisible = useIsVisible(subteamsRef, 0.3);
+  const subteamsIsVisible = useIsVisible(subteamsRef, 0.2);
 
+  const historyRef = useRef<HTMLDivElement>(null);
+  const historyIsVisible = useIsVisible(historyRef, 0.2);
   return (
     <>
       <div className="flex justify-center container min-w-screen">

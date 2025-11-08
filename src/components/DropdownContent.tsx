@@ -13,10 +13,10 @@ const DropdownContent = ({
   links,
   content,
 }: DropdownContentProps) => {
-  const [contentIndex, setContentIndex] = useState(0);
+  const [contentIndex, setContentIndex] = useState<number>(0);
 
   return (
-    <div className="flex flex-row text-white bg-neutral-900 p-3 rounded-4xl w-[700px] h-[220px]">
+    <div className="flex flex-row text-white bg-neutral-900 p-3 rounded-4xl w-[700px] h-56">
       <div className="w-1/2 flex flex-col mr-3">
         {labels.map((label, index) => (
           <a
@@ -30,10 +30,12 @@ const DropdownContent = ({
         ))}
       </div>
       <div className="w-[0.25px] bg-neutral-400/50 rounded-full h-full"></div>
-      <div className="flex justify-center items-center ml-3 w-1/2 bg-[#0f0f0f] rounded-2xl">
+      <div className="flex justify-center items-center ml-3 w-1/2 bg-linear-to-r from-[#2c5191] to-[#FA6300] rounded-2xl">
         <img
-          className="w-[150px] h-[150px]"
-          src={content[contentIndex]}
+          className="w-[150px] h-[150px] transition-all duration-300"
+          src={
+            contentIndex < content.length ? content[contentIndex] : content[0]
+          }
           alt=""
         />
       </div>

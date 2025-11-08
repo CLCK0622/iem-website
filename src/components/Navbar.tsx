@@ -99,7 +99,7 @@ const Navbar = () => {
 
       <div className="flex flex-row justify-between">
         <a
-          className="flex flex-row items-center text-white hover:text-neutral-400 transition-colors duration-300 w-fit mx-1"
+          className="flex flex-row items-center text-white hover:text-neutral-200 transition-colors duration-300 w-fit mx-1"
           href="https://linkedin.com/company/illini-electric-motorsports"
           target="_blank"
           rel="noopener noreferrer"
@@ -107,7 +107,7 @@ const Navbar = () => {
           <FaLinkedin className="size-[30px]" />
         </a>
         <a
-          className="flex flex-row items-center text-white hover:text-neutral-400 transition-colors duration-300 w-fit mx-1"
+          className="flex flex-row items-center text-white hover:text-neutral-200 transition-colors duration-300 w-fit mx-1"
           href="https://www.instagram.com/illinoisfsae"
           target="_blank"
           rel="noopener noreferrer"
@@ -115,7 +115,7 @@ const Navbar = () => {
           <FaInstagram className="size-[30px]" />
         </a>
         <a
-          className="group relative flex flex-row items-center text-white hover:text-neutral-400 w-fit mx-1"
+          className="group relative flex flex-row items-center text-white hover:text-neutral-200 w-fit mx-1"
           href="https://lists.illinois.edu/lists/info/uiuc-fsae-rso"
           target="_blank"
           rel="noopener noreferrer"
