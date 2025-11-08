@@ -36,7 +36,7 @@ const FormField: React.FC<FormFieldProps> = ({
           value={value}
           onChange={onChange}
           required={required}
-          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200 h-32 resize-none"
+          className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition duration-200 h-38 resize-none"
           placeholder={`Enter your ${label.toLowerCase()}...`}
         />
       </div>

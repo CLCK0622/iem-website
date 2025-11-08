@@ -33,7 +33,7 @@ const NavLink = ({
       onMouseLeave={() => setContentVisible(false)}
       className="flex group items-center group-hover:text-neutral-300 rounded-full transition-colors duration-300 px-4 py-1 z-10 w-full cursor-pointer text-white hover:bg-neutral-900"
     >
-      <span>{linkLabel}</span>
+      <span className="text-2xl">{linkLabel}</span>
       <MdKeyboardArrowDown className="ml-1 size-5 group-hover:-rotate-180 transition-transform duration-400" />
     </div>
   );

@@ -16,7 +16,7 @@ const DropdownContent = ({
   const [contentIndex, setContentIndex] = useState<number>(0);
 
   return (
-    <div className="flex flex-row text-white bg-neutral-900 p-3 rounded-4xl w-[700px] h-56">
+    <div className="flex flex-row text-white bg-neutral-900 p-3 rounded-4xl w-[700px] h-59">
       <div className="w-1/2 flex flex-col mr-3">
         {labels.map((label, index) => (
           <a
@@ -24,7 +24,7 @@ const DropdownContent = ({
             className="flex flex-col my-1 p-2 rounded-xl transition-colors duration-300 hover:bg-neutral-800"
             onMouseEnter={() => setContentIndex(index)}
           >
-            <span className="text-white text-base">{label}</span>
+            <span className="text-white text-lg">{label}</span>
             <span className="text-neutral-400 text-sm">{subtitles[index]}</span>
           </a>
         ))}

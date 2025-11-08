@@ -7,6 +7,7 @@ import LogoInfo from "@/components/info_sections/LogoInfo.tsx";
 import ResumeInfo from "@/components/info_sections/ResumeInfo.tsx";
 import SocialInfo from "@/components/info_sections/SocialInfo.tsx";
 import { useIsVisible } from "@/util/visibilityDetector";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const items = [
   {
@@ -38,6 +39,7 @@ interface FormDataState {
 const SponsorInfo = () => {
   const switcherRef = useRef<HTMLDivElement>(null);
   const switcherVisible = useIsVisible(switcherRef, 0.2);
+  console.log(switcherVisible);
 
   const formRef = useRef<HTMLDivElement>(null);
   const formVisible = useIsVisible(formRef, 0.2);
@@ -101,109 +103,111 @@ const SponsorInfo = () => {
   ];
 
   return (
-    <div
-      ref={switcherRef}
-      className={`${
-        switcherVisible
-          ? "opacity-100 blur-none"
-          : "opacity-0 blur-lg translate-y-30"
-      } transition-all duration-1500 flex flex-col justify-center items-center text-center mt-20 min-h-screen text-white p-4 md:p-8`}
-    >
-      <div className="flex justify-center container mb-20">
-        <div className="flex flex-col w-full lg:w-2/3">
-          <div className="flex flex-col mb-5">
-            <span className="text-white text-left font-[450] text-7xl w-fit mb-3">
+    <div className="flex justify-center min-w-screen container mb-20">
+      <div className="flex flex-col items-center min-h-screen w-2/3">
+        <div
+          ref={switcherRef}
+          className={`${
+            switcherVisible
+              ? "opacity-100 blur-none"
+              : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col justify-center items-center text-center mt-20 mb-5 text-white p-4 md:p-8`}
+        >
+          <div className="flex flex-col mb-10">
+            <span className="text-white text-left font-[450] text-7xl w-fit">
               Interested in sponsoring us?
             </span>
             <span className="text-xl font-light text-left text-neutral-400">
               Sponsoring Illini Electric Motorsports begins a symbiotic
-              partnership where we offer you visibility, promotion
-              opportunities, recruiting resources, and opportunities to host
-              events. We appreciate any support we receive from your products
-              and/or donations.
+              partnership with significant benefits for both parties.
             </span>
           </div>
-          <div>
-            <ContentSwitcher items={items} />
-          </div>
+          <ContentSwitcher items={items} />
         </div>
-      </div>
 
-      <div
-        ref={formRef}
-        className={`${
-          formVisible
-            ? "opacity-100 blur-none translate-y-0"
-            : "opacity-0 blur-lg translate-y-30"
-        } transition-all duration-1500 flex flex-col justify-center mb-10 mx-5`}
-      >
-        <span className="text-white font-[450] text-7xl w-fit mx-auto mb-3 mt-10">
-          Become a Sponsor
-        </span>
-        <p className="text-xl font-light text-neutral-400">
-          We're looking for partners to help us build the future of mobility.
-          Fill out the form below to get in touch!
-        </p>
-      </div>
+        <div
+          ref={formRef}
+          className={`${
+            formVisible
+              ? "opacity-100 blur-none translate-y-0"
+              : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col justify-center mb-10 mx-5`}
+        >
+          <span className="text-white font-[450] text-7xl w-fit mx-auto mb-3 mt-10">
+            Become a Sponsor
+          </span>
+          <p className="text-xl font-light text-neutral-400">
+            We're looking for partners to help us build the future of mobility.
+            Fill out the form below to get in touch!
+          </p>
+        </div>
 
-      <div
-        className={`${
-          formVisible
-            ? "opacity-100 blur-none translate-y-0"
-            : "opacity-0 blur-lg translate-y-30"
-        } transition-all duration-1500 w-full max-w-2xl p-8 md:p-10`}
-      >
-        <form onSubmit={handleSubmit}>
-          <FormField
-            id="name"
-            label="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
+        <div
+          className={`${
+            formVisible
+              ? "opacity-100 blur-none translate-y-0"
+              : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 w-full p-8 md:p-10`}
+        >
+          <form onSubmit={handleSubmit}>
+            <div className="flex flex-row">
+              <div className="w-1/2 mr-5">
+                <FormField
+                  id="name"
+                  label="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
 
-          <FormField
-            id="company"
-            label="Company / Organization"
-            value={formData.company}
-            onChange={handleChange}
-          />
+                <FormField
+                  id="company"
+                  label="Company / Organization"
+                  value={formData.company}
+                  onChange={handleChange}
+                />
 
-          <FormField
-            id="email"
-            label="Contact Email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+                <FormField
+                  id="email"
+                  label="Contact Email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="w-1/2 ml-5">
+                <FormField
+                  id="level"
+                  label="Intended Sponsor Level"
+                  type="select"
+                  value={formData.level}
+                  onChange={handleChange}
+                  options={sponsorLevels}
+                  required={true}
+                />
+                <FormField
+                  id="message"
+                  label="Message"
+                  type="textarea"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required={false}
+                />
+              </div>
+            </div>
 
-          <FormField
-            id="level"
-            label="Intended Sponsor Level"
-            type="select"
-            value={formData.level}
-            onChange={handleChange}
-            options={sponsorLevels}
-            required={true}
-          />
-
-          <FormField
-            id="message"
-            label="Message"
-            type="textarea"
-            value={formData.message}
-            onChange={handleChange}
-            required={false}
-          />
-
-          <div className="mt-8">
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-white hover:bg-gray-300 text-black font-bold text-lg rounded-lg transition duration-300 ease-in-out transform shadow-lg"
-            >
-              Submit Inquiry
-            </button>
-          </div>
-        </form>
+            <div className="mt-8">
+              <button
+                className="
+                    group items-center justify-center flex flex-row text-white text-xl bg-black/50 border-[0.25px] border-slate-300/50 hover:border-white/60 hover:pr-8 cursor-pointer text-nowrap rounded-xl w-full px-4 py-3 transition-all duration-300 hover:shadow-lg shadow-white/20 gap-1"
+              >
+                <div className="relative w-fit">
+                  <span className="font-light">Submit Inquiry</span>
+                  <FiArrowUpRight className="absolute -right-6 top-1 opacity-0 transition-all duration-300 translate-y-3 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0" />
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
