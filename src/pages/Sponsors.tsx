@@ -2,12 +2,32 @@ import SponsorDisplay from "@/components/SponsorDisplay";
 import { goldIcons, lithiumIcons } from "@/util/companyIcons";
 import ShinyText from "../components/external/ShinyText";
 import { FiArrowRight } from "react-icons/fi";
+import { useRef } from "react";
+import { useIsVisible } from "@/util/visibilityDetector";
 
 const Sponsors = () => {
+  const header = useRef(null);
+  const headerVisible = useIsVisible(header, 0.3);
+  const lithium = useRef(null);
+  const lithiumVisible = useIsVisible(lithium, 0.3);
+  const gold = useRef(null);
+  const goldVisible = useIsVisible(gold, 0.3);
+  const orange = useRef(null);
+  const orangeVisible = useIsVisible(orange, 0.3);
+  const blue = useRef(null);
+  const blueVisible = useIsVisible(blue, 0.3);
+
   return (
     <div className="flex justify-center container min-w-screen">
-      <div className="flex flex-col w-2/3 mt-20">
-        <div>
+      <div className="flex flex-col w-2/3 min-h-screen">
+        <div
+          ref={header}
+          className={`${
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 mt-20`}
+        >
           <span className="text-7xl text-white text-left mb-3">
             <span className="text-transparent bg-linear-to-r from-[#2c5191] to-[#FA6300] bg-clip-text italic">
               Our sponsors
@@ -24,61 +44,61 @@ const Sponsors = () => {
             <FiArrowRight className="absolute -right-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2" />
           </a>
         </div>
-        <div className="flex flex-col items-center my-10 p-6">
+        <div
+          ref={lithium}
+          className={`${
+            lithiumVisible ? "opacity-100" : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col items-center my-8 p-6`}
+        >
           <ShinyText
             color="lithium"
             speed={3}
-            className="text-2xl italic mb-10"
+            className="text-2xl italic mb-5"
             text="Lithium Level"
           />
-          <SponsorDisplay
-            icons={lithiumIcons}
-            numCols={5}
-            numRows={1}
-            iconSizePx={200}
-          />
+          <SponsorDisplay icons={lithiumIcons} iconSizePx={200} />
         </div>
-        <div className="flex flex-col items-center mx-auto my-10 p-6">
+        <div
+          ref={gold}
+          className={`${
+            goldVisible ? "opacity-100" : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col items-center my-8 p-6`}
+        >
           <ShinyText
             color="gold"
             speed={3}
-            className="text-2xl italic mb-10"
+            className="text-2xl italic mb-5"
             text="Gold Level"
           />
-          <SponsorDisplay
-            icons={goldIcons}
-            numCols={7}
-            numRows={3}
-            iconSizePx={120}
-          />
+          <SponsorDisplay icons={goldIcons} iconSizePx={120} />
         </div>
-        <div className="flex flex-col items-center mx-auto my-10 p-6">
+        <div
+          ref={orange}
+          className={`${
+            orangeVisible ? "opacity-100" : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col items-center my-8 p-6`}
+        >
           <ShinyText
             color="orange"
             speed={3}
-            className="text-2xl italic mb-10"
+            className="text-2xl italic mb-5"
             text="Orange Level"
           />
-          <SponsorDisplay
-            icons={lithiumIcons}
-            numCols={5}
-            numRows={1}
-            iconSizePx={100}
-          />
+          <SponsorDisplay icons={lithiumIcons} iconSizePx={100} />
         </div>
-        <div className="flex flex-col items-center mx-auto my-10 p-6">
+        <div
+          ref={blue}
+          className={`${
+            blueVisible ? "opacity-100" : "opacity-0 blur-lg translate-y-30"
+          } transition-all duration-1500 flex flex-col items-center my-8 p-6`}
+        >
           <ShinyText
             color="blue"
             speed={3}
-            className="text-2xl italic mb-10"
+            className="text-2xl italic mb-5"
             text="Blue Level"
           />
-          <SponsorDisplay
-            icons={lithiumIcons}
-            numCols={5}
-            numRows={1}
-            iconSizePx={100}
-          />
+          <SponsorDisplay icons={lithiumIcons} iconSizePx={100} />
         </div>
       </div>
     </div>
