@@ -281,7 +281,7 @@ function Home() {
                             <span className="text-white text-2xl">
                               Hands-on Experience
                             </span>
-                            <FaToolbox className="text-[#734700] size-[25px]" />
+                            <FaToolbox className="text-orange-400 size-[25px]" />
                           </div>
                           <span className="text-neutral-400 text-base font-extralight">
                             We offer the opportunity to design, prototype, and
